@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오늘의 트렌드 레이더</title>
+<meta name="description" content="최근 2주 안에 관측된 신호만 골라 최상류·상류·중류로 정리하는 트렌드 리포트. 종합 트렌드와 K-POP 두 카테고리로 발행합니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="오늘의 트렌드 레이더">
+<meta property="og:description" content="최근 2주 안에 관측된 신호만 골라 최상류·상류·중류로 정리하는 트렌드 리포트. 종합 트렌드와 K-POP 두 카테고리로 발행합니다.">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128225;</text></svg>">
+</head>
+<body>
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+  /* 사용자가 요청한 화이트 테마로 고정합니다. 뷰어가 다크 모드여도 동일하게 흰 배경을 유지합니다. */
+  :root,
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    color-scheme: light;
+
+    --bg:      #FFFFFF;
+    --ink:     #111214;
+    --ink-2:   #33363D;
+    --muted:   #656B78;
+    --faint:   #8D94A3;
+    --hair:    #E4E7ED;
+    --hair-2:  #F0F2F6;
+    --tint:    #F7F9FC;
+
+    --blue:      #1152DE;
+    --blue-deep: #0B3EAC;
+    --blue-tint: #EDF3FE;
+
+    --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+            "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: light; }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.78;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a { color: var(--blue); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--blue-deep); }
+  :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 3px; }
+
+  b, strong { font-weight: 700; }
+  .pt { color: var(--blue); font-weight: 600; }
+  em { font-style: normal; font-weight: 600; }
+
+  /* ─── top bar ─────────────────────────────── */
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--hair);
+  }
+
+  .bar-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 44px);
+  }
+
+  .bar-row-1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 15px 0 12px;
+  }
+
+  .brand {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-right: auto;
+  }
+  .brand .dot { color: var(--blue); }
+
+  .tabs { display: flex; gap: 6px; }
+
+  .tab {
+    appearance: none;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--hair);
+    background: #fff;
+    color: var(--muted);
+    padding: 7px 16px;
+    border-radius: 999px;
+    letter-spacing: -0.02em;
+    transition: color .12s, border-color .12s, background .12s;
+  }
+  .tab:hover { color: var(--ink); border-color: #C9D0DC; }
+  .tab[aria-selected="true"] {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+
+  .bar-row-2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-bottom: 13px;
+  }
+
+  .filter-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    margin-right: 4px;
+  }
+
+  .fchip {
+    appearance: none;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--hair);
+    background: #fff;
+    color: var(--muted);
+    padding: 5px 13px;
+    border-radius: 999px;
+    letter-spacing: -0.02em;
+    transition: color .12s, border-color .12s, background .12s;
+  }
+  .fchip:hover { color: var(--ink); border-color: #C9D0DC; }
+  .fchip[aria-pressed="true"] {
+    background: var(--blue-tint);
+    border-color: var(--blue);
+    color: var(--blue-deep);
+  }
+  .fcount { font-size: 13px; color: var(--faint); margin-left: 6px; }
+
+  /* ─── shell ───────────────────────────────── */
+
+  .shell {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px clamp(16px, 4vw, 44px) 110px;
+    display: grid;
+    grid-template-columns: 216px minmax(0, 1fr);
+    column-gap: clamp(30px, 5vw, 68px);
+    align-items: start;
+  }
+
+  .rail { position: sticky; top: 116px; display: flex; flex-direction: column; gap: 26px; }
+
+  .rail-head {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--hair);
+    margin-bottom: 10px;
+  }
+
+  .archive { display: flex; flex-direction: column; gap: 6px; }
+
+  .archive button {
+    appearance: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    padding: 11px 13px;
+    display: grid;
+    gap: 2px;
+    transition: border-color .12s, background .12s;
+  }
+  .archive button:hover { border-color: #C9D0DC; }
+  .archive button[aria-current="true"] {
+    border-color: var(--blue);
+    background: var(--blue-tint);
+  }
+  .a-date { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; }
+  .archive button[aria-current="true"] .a-date { color: var(--blue-deep); }
+  .a-note { font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+
+  .rail-note {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--faint);
+    border: 1px dashed var(--hair);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-top: 6px;
+  }
+
+  .toc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .toc a {
+    display: block;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.5;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--hair-2);
+  }
+  .toc a:hover { color: var(--blue); }
+  .toc .n { font-weight: 700; color: var(--faint); margin-right: 6px; }
+
+  /* ─── report ──────────────────────────────── */
+
+  [hidden] { display: none !important; }
+
+  .lede { padding-bottom: 34px; border-bottom: 1px solid var(--hair); margin-bottom: 42px; }
+
+  .dateline {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--blue);
+    margin: 0 0 12px;
+  }
+
+  .lede h1 {
+    font-size: clamp(30px, 4.4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.038em;
+    line-height: 1.24;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+
+  .thesis { max-width: 62ch; font-size: 17.5px; color: var(--ink-2); margin: 0; }
+
+  .cat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .cat-head h2 { font-size: 21px; font-weight: 800; letter-spacing: -0.03em; margin: 0; }
+  .cat-head .sub { font-size: 13.5px; color: var(--faint); }
+
+  /* trend card */
+  .trend {
+    border-top: 1px solid var(--hair);
+    padding: 34px 0 44px;
+  }
+  .trend:first-of-type { border-top: 0; padding-top: 20px; }
+
+  .stage-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+
+  .chip {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+  }
+  .trend[data-stage="up"]  .chip { background: var(--blue); color: #fff; }
+  .trend[data-stage="mid"] .chip { background: var(--blue-tint); color: var(--blue-deep); border-color: var(--blue); }
+  .trend[data-stage="low"] .chip { background: #fff; color: var(--muted); border-color: var(--hair); }
+
+  .stage-meta { font-size: 13px; color: var(--faint); font-weight: 500; }
+
+  .trend h3 {
+    font-size: clamp(23px, 2.7vw, 29px);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.32;
+    margin: 0 0 14px;
+    max-width: 24ch;
+    text-wrap: balance;
+  }
+
+  .what { max-width: 62ch; font-size: 17.5px; color: var(--ink-2); margin: 0 0 30px; }
+
+  .block { max-width: 66ch; margin-bottom: 28px; }
+
+  .block > h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: var(--faint);
+    margin: 0 0 12px;
+  }
+
+  .block p { margin: 0 0 12px; }
+  .block p:last-child { margin-bottom: 0; }
+
+  .facts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .facts > li { position: relative; padding-left: 17px; }
+  .facts > li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0.72em;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .trend[data-stage="low"] .facts > li::before { background: #B6BECD; }
+
+  cite {
+    display: block;
+    font-style: normal;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--faint);
+    margin-top: 4px;
+  }
+  cite a { color: var(--muted); }
+  cite a:hover { color: var(--blue); }
+
+  .caveat {
+    display: inline-block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+    background: var(--hair-2);
+    border-radius: 5px;
+    padding: 1px 8px;
+    white-space: nowrap;
+  }
+
+  /* flow */
+  .flow-wrap { overflow-x: auto; padding-bottom: 6px; }
+  .flow { display: flex; align-items: stretch; min-width: min-content; }
+  .flow .node {
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    background: var(--tint);
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    min-width: 128px;
+    max-width: 200px;
+  }
+  .flow .node .k {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: var(--blue);
+    margin-bottom: 3px;
+  }
+  .flow .node.next { background: #fff; border-style: dashed; }
+  .flow .node.next .k { color: var(--faint); }
+  .flow .arrow { display: flex; align-items: center; padding: 0 8px; color: #B6BECD; font-weight: 700; }
+
+  /* ideas */
+  .ideas { display: grid; gap: 12px; max-width: 66ch; }
+  @media (min-width: 940px) { .ideas { grid-template-columns: 1fr 1fr; max-width: none; } }
+
+  .idea {
+    border: 1px solid var(--hair);
+    border-radius: 12px;
+    padding: 18px 19px 20px;
+  }
+  .idea h5 {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--blue);
+    margin: 0 0 9px;
+  }
+  .idea p { margin: 0; font-size: 15.5px; line-height: 1.72; color: var(--ink-2); }
+
+  /* closing */
+  .closing { border-top: 2px solid var(--ink); padding-top: 28px; display: grid; gap: 30px; }
+  .closing h4 { font-size: 12.5px; font-weight: 700; letter-spacing: 0.07em; color: var(--faint); margin: 0 0 12px; }
+  .oneline { font-size: 19px; font-weight: 600; line-height: 1.66; letter-spacing: -0.025em; max-width: 60ch; margin: 0; }
+
+  .watchlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; max-width: 68ch; }
+  .watchlist li { padding: 13px 0; border-bottom: 1px solid var(--hair-2); font-size: 15.5px; line-height: 1.68; color: var(--ink-2); }
+  .watchlist li:first-child { padding-top: 0; }
+  .watchlist li:last-child { border-bottom: 0; }
+
+  .method {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+    background: var(--tint);
+    border-radius: 12px;
+    padding: 17px 19px;
+    max-width: 68ch;
+  }
+  .method b { color: var(--ink-2); }
+
+  .empty {
+    border: 1px dashed var(--hair);
+    border-radius: 12px;
+    padding: 34px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15.5px;
+  }
+
+  @media (max-width: 900px) {
+    body { font-size: 16.5px; }
+    .shell { grid-template-columns: 1fr; row-gap: 34px; }
+    .rail { position: static; order: 2; border-top: 1px solid var(--hair); padding-top: 26px; }
+    .main { order: 1; }
+    .trend h3 { max-width: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="topbar">
+  <div class="bar-inner">
+    <div class="bar-row-1">
+      <div class="brand">오늘의 트렌드 레이더<span class="dot">.</span></div>
+      <div class="tabs" role="tablist" aria-label="카테고리">
+        <button class="tab" role="tab" data-cat="general" aria-selected="true">종합 트렌드</button>
+        <button class="tab" role="tab" data-cat="kpop" aria-selected="false">K-POP</button>
+      </div>
+    </div>
+    <div class="bar-row-2">
+      <span class="filter-label">단계 필터</span>
+      <button class="fchip" data-stage="all" aria-pressed="true">전체</button>
+      <button class="fchip" data-stage="up" aria-pressed="false">최상류</button>
+      <button class="fchip" data-stage="mid" aria-pressed="false">상류</button>
+      <button class="fchip" data-stage="low" aria-pressed="false">중류</button>
+      <span class="fcount" id="fcount"></span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+  <aside class="rail">
+    <div>
+      <div class="rail-head">지난 리포트</div>
+      <div class="archive" id="archive"></div>
+      <div class="rail-note">리포트는 발행될 때마다 날짜별로 이 칸에 쌓입니다.</div>
+    </div>
+    <div>
+      <div class="rail-head">이 리포트 목차</div>
+      <ul class="toc" id="toc"></ul>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <!-- ══════════════════════ 2026.08.13 ══════════════════════ -->
+    <article class="report" data-date="2026-08-13">
+
+      <div class="lede">
+        <p class="dateline">2026. 08. 13 &nbsp;·&nbsp; THU</p>
+        <h1>AI를 놀이로 쓰고, 팬이 무대에 오른다</h1>
+        <p class="thesis">
+          오늘 여섯 개는 모두 <b class="pt">최근 2주 안에</b> 새 움직임이 확인된 것만 골랐습니다.
+          종합 쪽에서는 사람들이 AI를 도구가 아니라 <em>놀이 재료</em>로 쓰기 시작했고, 그 아래로 음식·공간이 따라 움직입니다.
+          K-POP 쪽에서는 무대에 서는 주체와 관람하는 방식이 동시에 흔들리는 중입니다.
+        </p>
+      </div>
+
+      <!-- ─────────── 종합 트렌드 ─────────── -->
+      <section class="cat" data-cat="general">
+        <div class="cat-head">
+          <h2>종합 트렌드</h2>
+          <span class="sub">소비 · 콘텐츠 · 마케팅</span>
+        </div>
+
+        <!-- 최상류 -->
+        <section class="trend" data-stage="up" id="g1" data-title="AI가 써준 대본을 그대로 연기하기">
+          <div class="stage-row">
+            <span class="chip">최상류</span>
+            <span class="stage-meta">국내 유입 전 · 관측 2026.08.10</span>
+          </div>
+
+          <h3>AI가 써준 대본을 그대로 연기하기</h3>
+
+          <p class="what">
+            친구들끼리 ChatGPT에 짧은 장면(말다툼, 이별, 아무 드라마틱한 순간)을 써 달라고 시킨 뒤,
+            대사가 아무리 이상해도 고치지 않고 <em>무표정으로 끝까지 연기</em>하는 포맷입니다.
+            화면에는 <b class="pt">"we had ChatGPT make us a script"</b> 한 줄만 띄웁니다.
+          </p>
+
+          <div class="block">
+            <h4>단계 — 왜 최상류인가</h4>
+            <ul class="facts">
+              <li>
+                주간 갱신되는 틱톡 트렌드 리스트의 <b class="pt">2026년 8월 10일 자</b> 개정판에 이 포맷이 10대 트렌드 중 하나로 올라왔습니다. 같은 리스트에 대본 없는 즉흥 포맷이 여러 개 함께 있는 점이 중요합니다 — 대본을 아예 AI에 외주 주는 흐름이 그 위에 얹히는 구조입니다.
+                <cite><a href="https://newengen.com/insights/august-tiktok-trends/">New Engen, August 2026 TikTok Trends (2026.08.10 갱신)</a></cite>
+              </li>
+              <li>
+                준비물이 없습니다. 프롬프트 한 줄과 친구 두세 명이면 되고, 웃음이 나오는 지점이 <em>AI 문장의 어색함</em> 자체라서 연기력도 필요 없습니다. 그래서 단톡방 단위로 번지고 있습니다.
+              </li>
+              <li>
+                국내에서는 이 특정 포맷의 사례가 아직 확인되지 않습니다. 다만 국내 트렌드 뉴스레터들도 "MZ세대가 AI를 업무 도구가 아니라 <em>놀이 문화</em>로 소비하기 시작했다"는 관찰을 내놓고 있어, 정서적 토대는 이미 있습니다.
+                <cite><a href="https://avocadogiant.com/newsletter/korea/2026-mz-%EB%B0%88-%EC%B1%8C%EB%A6%B0%EC%A7%80-%ED%8A%B8%EB%A0%8C%EB%93%9C/">아보카도자이언트, 2026 MZ 밈·챌린지 트렌드</a></cite>
+              </li>
+              <li><span class="caveat">1차 출처가 트렌드 요약 매체 중심 — 신호 강도는 중간, 추가 관찰 필요</span></li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>시작 신호가 보이는 곳</h4>
+            <p>
+              영어권 틱톡의 <em>그룹 콘텐츠</em>(친구·룸메이트·형제자매 계정)가 진원지입니다.
+              정확한 최초 발원 계정은 특정하기 어렵고, 현재 확인되는 초기 확산 지점은
+              <b class="pt">2026년 7월 말~8월 초 미국권 틱톡</b>입니다.
+              핵심은 밈 하나가 아니라 태도 변화입니다 — AI가 만든 결과물을 감추거나 다듬는 대신,
+              <em>"AI가 썼다"는 사실 자체를 콘텐츠의 훅으로 내세운다</em>는 점입니다.
+            </p>
+          </div>
+
+          <div class="block">
+            <h4>왜 지금 한국에서 주목해야 하는지</h4>
+            <ul class="facts">
+              <li>국내 브랜드 대부분은 아직 AI 사용을 숨기는 쪽입니다. 그런데 이 포맷은 반대로 <em>AI 티가 나는 것이 재미</em>라, "AI로 만들었으니 티 안 나게" 라는 기존 가이드를 뒤집습니다.</li>
+              <li>제작비가 사실상 0원입니다. 촬영 세트도 편집도 필요 없어, 예산이 없는 브랜드가 <em>먼저</em> 움직일 수 있는 드문 포맷입니다.</li>
+              <li>AI가 브랜드를 어떻게 설명하는지가 그대로 노출됩니다. AI 검색이 늘어나는 상황에서 "AI가 우리 브랜드를 뭐라고 말하는지"를 공개적으로 점검하는 콘텐츠로 전환할 수 있습니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>확산 경로</h4>
+            <div class="flow-wrap">
+              <div class="flow">
+                <div class="node"><span class="k">A</span>영어권 틱톡 그룹 계정 (7월 말~8월 초)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">B</span>주간 트렌드 리스트 등재 (8/10)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">C</span>단톡방·친구 단위 확산</div>
+                <div class="arrow">→</div>
+                <div class="node next"><span class="k">예상 D</span>국내 번역 계정 → 대학생·직장인 릴스 → 브랜드 계정</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p>
+                  <b>"AI한테 우리 광고 대본 시켜봤다"</b> 3부작.
+                  프롬프트를 화면에 그대로 노출하고 — 예: "우리 브랜드 신제품 광고를 30초로 써줘" —
+                  직원 두 명이 AI가 뱉은 어색한 대본을 <em>한 글자도 고치지 않고</em> 연기합니다.
+                  3편째에서 AI가 제품을 계속 틀리게 설명한 지점만 모아 담당자가 정정합니다.
+                  웃긴 콘텐츠가 그대로 <em>제품 정보 정정 콘텐츠</em>가 되는 구조라, 재미와 실효를 한 편에 담을 수 있습니다.
+                </p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p>
+                  <b>'AI 대본 vs 에디터 대본' 블라인드 릴스.</b>
+                  같은 상황(카페 첫 소개팅, 상사와의 어색한 엘리베이터)을 두 버전으로 찍어 나란히 올리고,
+                  어느 쪽이 AI인지 댓글로 맞히게 합니다. 정답은 24시간 뒤 고정 댓글로 공개.
+                  카드뉴스로는 <em>"AI에게 시키면 반드시 나오는 클리셰 10가지"</em> —
+                  실제로 10번 돌려서 반복 등장한 문장(예: 잠깐의 침묵, 커피가 식어간다)을 빈도수와 함께 정리합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 상류 -->
+        <section class="trend" data-stage="mid" id="g2" data-title="한정 디저트가 '방한 이유'가 된다">
+          <div class="stage-row">
+            <span class="chip">상류</span>
+            <span class="stage-meta">국내 진입 시작 · 보도 2026.08.07</span>
+          </div>
+
+          <h3>한정 디저트가 '방한 이유'가 된다</h3>
+
+          <p class="what">
+            외국인 관광객이 한국에 와서 디저트를 먹는 게 아니라,
+            <em>SNS에서 본 디저트를 먹으러 한국에 오는</em> 쪽으로 순서가 바뀌고 있습니다.
+            여행 일정이 명소가 아니라 매장 리스트를 중심으로 짜입니다.
+          </p>
+
+          <div class="block">
+            <h4>단계 — 왜 상류인가</h4>
+            <ul class="facts">
+              <li>
+                한국관광데이터랩 기준 <b class="pt">2026년 상반기 방한 외국인 1,071만 명</b>으로 반기 기준 처음 1,000만 명을 넘었고, 전년 동기 대비 <b class="pt">21.3% 증가</b>했습니다. 외국인 카드 지출은 <b class="pt">10조 400억 원</b>으로 역대 최단 기간 10조 원을 돌파했습니다.
+                <cite><a href="https://www.asiatoday.co.kr/kn/view.php?key=20260807010002373">아시아투데이, 2026.08.07</a></cite>
+              </li>
+              <li>
+                개별 사례가 이미 나옵니다 — 한옥 분위기와 수플레로 해외 SNS에서 알려진 청수당, 제주 녹차를 쓰는 오설록 북촌점, 약과·흑임자·말차를 얹은 버거킹 × 골든피스 '킹 퓨전' 같은 전통 재료 재해석 협업입니다.
+              </li>
+              <li>
+                다만 대다수 브랜드의 한정 메뉴 기획은 여전히 내국인 기준입니다. 다국어 메뉴판·웨이팅 안내가 갖춰진 곳은 소수라, 흐름은 확인되지만 대응은 아직 초기입니다.
+              </li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>시작 신호가 보이는 곳</h4>
+            <p>
+              발원지를 한 곳으로 특정하긴 어렵습니다. 현재 확인되는 초기 확산 지점은
+              <em>해외 SNS의 K-디저트 콘텐츠</em>이고, 여기서 만들어진 리스트가 방한 전 사전 조사 단계로 넘어가
+              특정 매장 순례로 이어지는 구조입니다.
+              중국 쪽에서는 샤오홍슈, 영어권에서는 틱톡·인스타그램이 각각 다른 매장을 밀어올리는 것으로 보입니다.
+              <span class="caveat">플랫폼별 기여도는 수치로 확인 안 됨</span>
+            </p>
+          </div>
+
+          <div class="block">
+            <h4>왜 지금 한국에서 주목해야 하는지</h4>
+            <ul class="facts">
+              <li>디저트가 <em>기념품 카테고리</em>로 이동합니다. 먹고 끝나는 게 아니라 "여기 왔다"는 증명이 되기 때문에, 포장·로고·촬영 동선이 맛만큼 중요해집니다.</li>
+              <li>객단가 구조가 바뀝니다. 내국인은 재방문 빈도로 매출을 만들지만, 관광객은 <em>단 한 번</em>입니다. 1회 방문에서 최대치를 뽑는 세트·굿즈 구성이 필요합니다.</li>
+              <li>병목이 명확합니다 — 웨이팅 앱과 메뉴판의 다국어 지원. 여기서 막히면 SNS 트래픽이 매출로 이어지지 않습니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>확산 경로</h4>
+            <div class="flow-wrap">
+              <div class="flow">
+                <div class="node"><span class="k">A</span>해외 SNS의 K-디저트 콘텐츠</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">B</span>방한 전 사전 조사·저장</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">C</span>특정 매장 순례형 일정 (2026 상반기)</div>
+                <div class="arrow">→</div>
+                <div class="node next"><span class="k">예상 D</span>외국인 겨냥 한정 메뉴·다국어 웨이팅·면세 연계</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p>
+                  <b>'여권 메뉴' 설계.</b> 한국에서만·이 매장에서만 파는 단품 하나를 정해
+                  메뉴판 맨 위에 3개 국어 픽토그램으로 고정합니다.
+                  영수증 하단에 다음 매장 QR을 붙여 <em>디저트 스탬프 투어</em>로 묶으면 인근 3~4개 브랜드가 서로 트래픽을 나눌 수 있습니다.
+                  가장 먼저 손볼 것은 맛이 아니라 <em>웨이팅 앱 다국어 지원</em>입니다. 여기서 이탈이 가장 큽니다.
+                </p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p>
+                  <b>'외국인이 실제로 줄 선 디저트 지도'.</b>
+                  평일 오후 3시 같은 조건을 고정하고 매장 10곳의 대기 인원과 외국인 비율을 직접 세어 표로 만듭니다.
+                  추측이 아니라 관찰이라 저장률이 다릅니다.
+                  릴스는 <em>'한국인은 모르는데 외국인만 아는 가게 5곳'</em> —
+                  각 컷 하단에 해당 매장이 어느 나라 SNS에서 떴는지 국기 자막을 넣어 출처를 밝히는 게 포인트입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 중류 -->
+        <section class="trend" data-stage="low" id="g3" data-title="글로벌 음료 트렌드의 '2주 이식'">
+          <div class="stage-row">
+            <span class="chip">중류</span>
+            <span class="stage-meta">흐름으로 확인됨 · 판매 수치 공개</span>
+          </div>
+
+          <h3>글로벌 음료 트렌드의 '2주 이식'</h3>
+
+          <p class="what">
+            해외 SNS에서 뜬 음료를 국내 프랜차이즈가 거의 즉시 베껴 출시하고,
+            그게 화제성에 그치지 않고 <em>실제 판매량</em>으로 이어지고 있습니다.
+            지금 축은 두 개 — <b class="pt">공기(거품)</b>와 <b class="pt">보라색(우베)</b>입니다.
+          </p>
+
+          <div class="block">
+            <h4>단계 — 왜 중류인가</h4>
+            <ul class="facts">
+              <li>
+                스타벅스 <b class="pt">'에어카노'</b>는 2월 출시 <b class="pt">1주 만에 100만 잔</b>, 이달 초 기준 누적 <b class="pt">400만 잔</b>을 넘겼습니다. 초기의 "신기해서 한 번" 우려와 달리 상위권을 유지했습니다.
+              </li>
+              <li>
+                투썸플레이스는 3월 출시한 휘핑크림 커피 3종이 2개월간 <b class="pt">75만 잔</b>, 지난달 내놓은 <b class="pt">우베</b> 3종이 <b class="pt">50만 잔</b>을 기록했고 '우베 라떼'는 출시 <b class="pt">3일 만에</b> 음료 카테고리 1위에 올랐습니다.
+              </li>
+              <li>
+                저가 브랜드도 같이 움직였습니다. 빽다방 '에어폼 아메리카노'는 단일 메뉴 매출 2위, 컴포즈커피 '에어리 아메리카노'는 <b class="pt">1개월 24만 잔</b>입니다. 대형·저가가 동시에 붙었다는 점에서 이미 하나의 흐름입니다.
+                <cite><a href="https://www.sedaily.com/article/20047406">서울경제, 「효자 된 트렌드 메뉴…카페업계 '초고속 출시' 통했다」</a></cite>
+              </li>
+              <li>다만 우베는 이제 막 시작 단계이고, 편의점·베이커리로는 아직 넘어가지 않았습니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>시작 신호가 보이는 곳</h4>
+            <p>
+              거품 계열은 해외 카페 콘텐츠에서, 우베는 필리핀의 자색 마 디저트가 미국·동남아 SNS를 거쳐 넘어온 경로로 보입니다.
+              업계 관계자도 <em>"SNS로 트렌드가 퍼지는 만큼 타이밍이 관건"</em>이라고 말합니다.
+              중요한 건 메뉴 자체가 아니라, 국내 프랜차이즈의 <em>기획-출시 사이클이 몇 주 단위로 줄었다</em>는 사실입니다.
+            </p>
+          </div>
+
+          <div class="block">
+            <h4>왜 지금 한국에서 주목해야 하는지</h4>
+            <ul class="facts">
+              <li>공식이 단순합니다 — <em>색이 특이하거나 질감이 특이하면</em> 됩니다. 맛의 혁신이 아니라 촬영 가능한 차이가 판매를 만듭니다.</li>
+              <li>선점 효과가 짧습니다. 에어카노 이후 저가 브랜드가 이름만 바꿔 따라붙는 데 몇 주가 걸리지 않았습니다. 늦게 들어가면 <em>미투 제품</em>으로만 보입니다.</li>
+              <li>음료에서 검증된 이 사이클은 화장품·잡화 같은 저관여 카테고리로 그대로 옮겨갈 수 있습니다. <span class="caveat">타 카테고리 확산은 아직 관찰 단계</span></li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>확산 경로</h4>
+            <div class="flow-wrap">
+              <div class="flow">
+                <div class="node"><span class="k">A</span>해외 SNS 화제 메뉴 (거품 · 우베)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">B</span>대형 프랜차이즈 선점 출시 (2~7월)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">C</span>저가 브랜드 변형 확산</div>
+                <div class="arrow">→</div>
+                <div class="node next"><span class="k">예상 D</span>개인 카페 · 편의점 RTD · 베이커리</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p>
+                  <b>'2주 대응 라인'을 상설로 만들어 둡니다.</b>
+                  무지 컵·투명 뚜껑·라벨 스티커만 미리 확보해 두고, 해외 SNS에서 메뉴가 뜨면
+                  <em>색 하나 또는 질감 하나</em>만 맞춰 2주 안에 내보내는 구조입니다.
+                  정식 신메뉴가 아니라 '한정 테스트'로 붙이면 실패 부담도 줄고,
+                  판매 데이터가 다음 정식 출시의 근거가 됩니다.
+                </p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p>
+                  <b>'에어카노 이후 계보도' 카드뉴스.</b>
+                  원조 국가 / 국내 첫 출시일 / 공개된 판매량 / 따라 나온 브랜드를 한 표에 정리해
+                  유행의 <em>속도 자체</em>를 보여줍니다.
+                  릴스는 <em>'같은 날 네 브랜드 우베 마셔보기'</em> —
+                  가격·용량·색을 동일 앵글로 찍고 마지막에 잔당 가격을 자막으로 띄우는 블라인드 시음 포맷입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="closing">
+          <div>
+            <h4>오늘 한 줄 요약 — 종합</h4>
+            <p class="oneline">
+              최상류에서는 사람들이 AI를 숨길 대상이 아니라 <em>같이 노는 재료</em>로 쓰기 시작했고,
+              상류에서는 그 SNS 콘텐츠가 <em>비행기표</em>를 움직이며,
+              중류에서는 국내 브랜드가 그 흐름을 <em>2주 안에 상품으로 바꾸는</em> 속도를 갖췄습니다.
+            </p>
+          </div>
+          <div>
+            <h4>다음 단계 후보</h4>
+            <ul class="watchlist">
+              <li><b>'Bob' 포맷</b> — 같은 답을 서너 번 반복하며 점점 과장하는 틱톡 포맷. 브랜드 제품을 '모든 문제의 답'으로 넣기 좋아 국내 유입 여부를 볼 만합니다.</li>
+              <li><b>우베(ube)의 카테고리 이동</b> — 카페를 넘어 편의점 RTD·베이커리로 넘어가면 유행에서 상시 재료로 바뀝니다.</li>
+              <li><b>중국 캐릭터 IP 직진출</b> — 어제 리포트에서 다뤘습니다. 용산 팝업이 9월 28일 종료 예정이라, 종료 직후 정식 매장으로 전환하는지가 다음 분기점입니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────── K-POP ─────────── -->
+      <section class="cat" data-cat="kpop" hidden>
+        <div class="cat-head">
+          <h2>K-POP 트렌드</h2>
+          <span class="sub">아티스트 · 팬덤 · 공연</span>
+        </div>
+
+        <!-- 최상류 -->
+        <section class="trend" data-stage="up" id="k1" data-title="버추얼 아이돌에 'A급 제작진'이 들어온다">
+          <div class="stage-row">
+            <span class="chip">최상류</span>
+            <span class="stage-meta">데뷔 전 · 첫 라이브 8월 중순</span>
+          </div>
+
+          <h3>버추얼 아이돌에 'A급 제작진'이 들어온다</h3>
+
+          <p class="what">
+            버추얼 아이돌이 새로운 건 아닙니다. 새로운 건 <em>누가 만드느냐</em>입니다.
+            실사 아이돌을 만들던 최상급 프로듀서와 아이돌 출신 디렉터가 버추얼 그룹 제작에 직접 붙기 시작했습니다.
+          </p>
+
+          <div class="block">
+            <h4>단계 — 왜 최상류인가</h4>
+            <ul class="facts">
+              <li>
+                엔터테크 기업 디네이블이 만드는 5인조 버추얼 보이그룹 <b class="pt">비그릿츠(BEGRITZ)</b>의 음악 총괄을 <b class="pt">알티(R.Tee)</b>가 맡습니다. 블랙핑크·빅뱅·에스파 윈터 곡 작업으로 알려진 프로듀서입니다. 블락비 태일이 A&amp;R과 보컬 디렉팅으로 합류했습니다.
+                <cite><a href="https://www.tenasia.co.kr/article/2026071432874">텐아시아, 2026.07.14</a> · <a href="http://www.osen.co.kr/article/G1112839580">OSEN</a></cite>
+              </li>
+              <li>
+                공식 웹사이트 <b class="pt">'달빛상회'</b>를 열고 로고 모션·세계관 영상을 순차 공개 중이며, <b class="pt">8월 중순 첫 라이브</b>가 예정돼 있습니다. 세계관은 '시공간을 모험하는 도깨비', 기술은 실시간 CG 파이프라인 + AI + 퍼포먼스 캡처 조합입니다.
+                <cite><a href="https://edaily.co.kr/News/Read?mediaCodeNo=257&amp;newsId=05756406645519112">이데일리</a> · <a href="https://www.dnable.xyz/">DNABLE 공식</a></cite>
+              </li>
+              <li>
+                데뷔 전인데 일본 매체가 먼저 소개 기사를 냈습니다. 국내 대중 인지도는 사실상 0에 가깝고 해외 얼리어답터만 감지하는 단계입니다.
+                <cite><a href="https://www.topcelev.jp/begritz-debut-site/">topcelev.jp</a></cite>
+              </li>
+              <li>배경 지표 — 버추얼 그룹 플레이브가 2025년 초동 100만 장을 넘기며 버추얼 최초 밀리언셀러가 됐습니다. 상업적 증명이 끝났기 때문에 제작 인력이 움직이는 것입니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>시작 신호가 보이는 곳</h4>
+            <p>
+              한국 엔터테크 기업이 발원지이고, 확산 경로가 특이합니다 —
+              기획사 공식 채널이나 팬덤 플랫폼이 아니라 <em>자체 웹사이트</em>를 먼저 열어 데뷔 전 팬 접점을 확보하는 방식입니다.
+              위버스·버블 같은 기존 플랫폼을 거치지 않고 시작한다는 점에서, 팬덤 인프라를 처음부터 직접 쥐려는 시도로 읽힙니다.
+              <span class="caveat">향후 플랫폼 입점 여부는 미정 — 관찰 필요</span>
+            </p>
+          </div>
+
+          <div class="block">
+            <h4>왜 지금 한국에서 주목해야 하는지</h4>
+            <ul class="facts">
+              <li>브랜드 협업 조건이 실사 아이돌과 다릅니다. 스케줄 제약이 없고 초상권 구조가 단순해, 광고 소재를 <em>하루 만에 수십 개 버전</em>으로 변형할 수 있습니다.</li>
+              <li>데뷔 전 계약이 가능합니다. 세계관이 아직 확정되지 않은 단계라 자사 제품을 <em>설정 안에 넣는</em> 협상이 열려 있습니다. 데뷔 후에는 이 여지가 사라집니다.</li>
+              <li>리스크가 낮습니다. 실사 아이돌 협업의 가장 큰 변수인 개인 리스크가 구조적으로 줄어드는 대신, 제작사 리스크로 옮겨갑니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>확산 경로</h4>
+            <div class="flow-wrap">
+              <div class="flow">
+                <div class="node"><span class="k">A</span>플레이브의 상업적 증명 (2025 초동 100만)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">B</span>주류 제작 인력 영입 (2026.07)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">C</span>자체 웹사이트로 데뷔 전 팬 접점 확보 (7~8월)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">D</span>첫 라이브 (8월 중순)</div>
+                <div class="arrow">→</div>
+                <div class="node next"><span class="k">예상</span>음반 발매 · 팬덤 플랫폼 진입 · 브랜드 협업</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p>
+                  <b>데뷔 전 '세계관 소품' 협상.</b>
+                  광고 모델 계약이 아니라, 자사 제품을 그룹 세계관의 <em>설정 안에 넣는</em> 방식으로 접근합니다.
+                  예를 들어 음료 브랜드라면 '도깨비들이 시공간 이동 전에 마시는 것'으로 편입시키고,
+                  데뷔 후 그 소품을 실물 굿즈로 출시합니다.
+                  단가 협상 여지는 데뷔 전이 압도적으로 크고, 팬은 광고가 아니라 <em>설정</em>으로 받아들입니다.
+                </p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p>
+                  <b>'팬덤이 0에서 만들어지는 과정' 주간 연재.</b>
+                  달빛상회 오픈일부터 첫 라이브까지, 공식 계정 팔로워 수와 <em>댓글 언어 비율</em>을 주 1회 같은 시각에 캡처해 꺾은선 그래프로 올립니다.
+                  버추얼 그룹은 데뷔 전 데이터가 공개적이라 이런 관찰이 가능합니다.
+                  카드뉴스는 <em>'실사 아이돌 프로듀서는 어디로 갔나'</em> 계보도 —
+                  누가 어떤 실사 그룹을 만들었고 지금 어느 버추얼 프로젝트에 있는지 한 장으로 정리합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 상류 -->
+        <section class="trend" data-stage="mid" id="k2" data-title="팬이 출연자가 되는 예능">
+          <div class="stage-row">
+            <span class="chip">상류</span>
+            <span class="stage-meta">방영 중 · 유튜브 공개 2026.08.05~</span>
+          </div>
+
+          <h3>팬이 출연자가 되는 예능</h3>
+
+          <p class="what">
+            아이돌이 아니라 <em>팬이 주인공</em>인 서바이벌 예능이 나왔습니다.
+            티켓팅·응원법·촬영·콘텐츠 제작처럼 실제 덕질에서 쓰는 능력이 그대로 경기 종목이 됩니다.
+          </p>
+
+          <div class="block">
+            <h4>단계 — 왜 상류인가</h4>
+            <ul class="facts">
+              <li>
+                <b class="pt">'팬덤스테이지'</b>가 2026년 7월 29일 웨이브에서 첫 공개됐습니다. 총 8부작, 매주 수요일 오전 11시 2회씩 공개되고, 유튜브 채널 Pixid에서는 <b class="pt">8월 5일부터</b> 순차 공개됩니다. 진행은 하이라이트 윤두준, 제작은 벌스워크입니다.
+                <cite><a href="https://www.enetnews.co.kr/news/articleView.html?idxno=52728">이넷뉴스</a> · <a href="https://v.daum.net/v/20260723142108857">벌스워크 보도자료</a></cite>
+              </li>
+              <li>
+                참가 팬덤이 <b class="pt">10개</b>입니다 — god, 빅뱅, 샤이니, 엑소, 몬스타엑스, 세븐틴, DAY6, 트와이스, TXT, 라이즈. 세대와 소속사를 가로질러 섭외됐다는 점이 이 기획의 실험성을 보여줍니다.
+                <cite><a href="https://www.elle.co.kr/article/1906690">엘르, 참가 팬덤·대결 종목 정리</a></cite>
+              </li>
+              <li>
+                미션이 티켓팅 속도, 응원법 암기, 직캠 촬영, 콘텐츠 제작, 순발력, 피지컬로 구성됩니다. <em>"덕력이 곧 실력"</em>이라는 전제를 방송 포맷으로 옮긴 첫 사례에 가깝습니다.
+              </li>
+              <li>반응은 팬덤 커뮤니티와 유튜브 중심입니다. 대중적 화제까지는 아직 가지 않아 상류로 판단합니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>시작 신호가 보이는 곳</h4>
+            <p>
+              발원은 국내 제작사입니다. 다만 그 아래 깔린 정서는 훨씬 오래됐습니다 —
+              팬덤은 이미 스스로 총공·스밍팀·컵홀더 이벤트·전시를 기획하며 <em>제작자 역할</em>을 해왔고,
+              이 프로그램은 그 노동을 공식 무대 위로 올린 것입니다.
+              OTT 선공개 후 유튜브 무료 공개로 확산을 노리는 편성 구조도 눈여겨볼 만합니다.
+            </p>
+          </div>
+
+          <div class="block">
+            <h4>왜 지금 한국에서 주목해야 하는지</h4>
+            <ul class="facts">
+              <li>팬덤 마케팅의 대상이 바뀝니다. 지금까지 브랜드는 아티스트를 빌려 팬에게 접근했는데, 이 포맷은 <em>팬 자체가 콘텐츠 자산</em>이라고 말합니다.</li>
+              <li>브랜드에도 그대로 이식됩니다. "우리 제품을 가장 잘 아는 고객"을 뽑는 대회는 아이돌 IP 사용료 없이 만들 수 있습니다.</li>
+              <li>측정 가능한 능력이 종목이 됐다는 점이 핵심입니다. 애정은 측정이 어렵지만 <em>티켓팅 성공률·암기·제작 속도</em>는 순위를 매길 수 있습니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>확산 경로</h4>
+            <div class="flow-wrap">
+              <div class="flow">
+                <div class="node"><span class="k">A</span>팬덤의 자발적 기획 노동 (총공 · 컵홀더 · 전시)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">B</span>OTT 편성 (웨이브 7/29)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">C</span>유튜브 무료 공개로 확산 (8/5~)</div>
+                <div class="arrow">→</div>
+                <div class="node next"><span class="k">예상 D</span>브랜드가 '고객 능력 대회'를 자체 IP로 복제</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p>
+                  <b>'고객 능력 대회'로 이식.</b>
+                  팬사인회식 추첨 대신, 우리 제품을 가장 잘 아는 사람을 뽑는 미션전을 엽니다 —
+                  블라인드 성분 맞히기, 재입고 알림 반응 속도, 상황별 조합 설계 같은
+                  <em>실제로 잘하는 사람이 이기는</em> 종목이어야 합니다.
+                  우승자를 다음 시즌 심사위원으로 올리면 2회차부터는 커뮤니티가 스스로 굴러갑니다.
+                </p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p>
+                  <b>'덕력 자가진단 10문항' 카드뉴스.</b>
+                  프로그램 미션을 그대로 문항화합니다 — 티켓팅 성공률, 응원법 암기 여부, 포카 정리 방식, 직캠 편집 경험.
+                  결과를 4유형으로 나누고 유형별 이미지를 따로 만들어 <em>공유되도록</em> 설계합니다.
+                  릴스는 에디터가 실제 티켓팅 미션을 60초 원테이크로 수행하는 영상 —
+                  실패해도 그대로 올리는 편이 반응이 좋습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 중류 -->
+        <section class="trend" data-stage="low" id="k3" data-title="관람이 참여가 된다 — 싱어롱과 워치파티">
+          <div class="stage-row">
+            <span class="chip">중류</span>
+            <span class="stage-meta">흐름으로 확인됨 · 발표 2026.08.05</span>
+          </div>
+
+          <h3>관람이 참여가 된다 — 싱어롱과 워치파티</h3>
+
+          <p class="what">
+            K-콘텐츠 행사가 '보는 것'에서 '같이 부르고 같이 보는 것'으로 넘어가고 있습니다.
+            공연장·극장·페스티벌이 동시에 <em>관객을 소리 내게 만드는</em> 프로그램을 정식 편성하기 시작했습니다.
+          </p>
+
+          <div class="block">
+            <h4>단계 — 왜 중류인가</h4>
+            <ul class="facts">
+              <li>
+                <b class="pt">KCON LA 2026</b>(2026년 8월 14~16일, 크립토닷컴 아레나 · LA 컨벤션센터)이 참여형 프로그램을 정식 라인업으로 올렸습니다. 사전 공개 셋리스트를 관객이 함께 부르는 <b class="pt">SING THE SCREEN</b>, 박은빈·이준혁·이상훈 등 배우와 함께 K-콘텐츠를 보고 Q&amp;A까지 하는 <b class="pt">WATCH PARTY &amp; BEYOND THE SCREEN</b>입니다. 총 37팀이 출연합니다.
+                <cite><a href="https://cjnews.cj.net/kcon-la-2026-%EB%AF%B8%EA%B5%AD-la%EC%97%90-%EC%84%9C%EC%9A%B8%EC%9D%98-%EB%A7%A4%EB%A0%A5%EC%A0%81%EC%9D%B8-%EB%B0%94%EC%9D%B4%EB%B8%8C-%EA%B5%AC%ED%98%84%EC%8B%B1%EC%96%B4/">CJ 뉴스룸, 2026.08.05</a> · <a href="https://www.starnewskorea.com/en/music/2026/08/05/2026080515141451610">스타뉴스</a></cite>
+              </li>
+              <li>
+                국내에서도 숫자가 뒷받침됩니다 — 전체 극장 관객이 줄어드는 와중에 특별상영 매출은 2025년 <b class="pt">1,110억 원(+46.3%)</b>, 관객 <b class="pt">739만 명(+52.4%)</b>으로 늘었습니다.
+                <cite><a href="https://v.daum.net/v/7mjrX9RfTU">「스크린 넘어 '팬덤 플랫폼'」, 2026.06.22</a></cite>
+              </li>
+              <li>
+                멀티플렉스별 움직임도 구체적입니다. CGV는 6월 BTS 부산 공연과 연계한 심야 프로그램 '올 무비 나잇'을 열었고, 롯데시네마는 르세라핌 VR 콘서트를 단독 상영했으며, 메가박스 홍대는 애니메이션 특화관으로 전환했습니다.
+              </li>
+              <li>여러 주체가 동시에 움직이고 매출까지 확인되지만, 아직 K-pop 공연의 기본값은 아닙니다 → 중류.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>시작 신호가 보이는 곳</h4>
+            <p>
+              뿌리는 서브컬처의 <em>응원상영</em>입니다. 야광봉을 들고 소리 내며 보는 관습이 애니메이션·음악영화에서 먼저 자리 잡았고,
+              그게 K-pop 콘서트 실황 상영으로 옮겨온 뒤 이제 해외 대형 페스티벌의 공식 프로그램이 됐습니다.
+              최초 발원지를 한 곳으로 단정하긴 어렵지만, 확인되는 경로는 <em>서브컬처 관습 → 국내 극장 → 해외 K-pop 행사</em> 순입니다.
+            </p>
+          </div>
+
+          <div class="block">
+            <h4>왜 지금 한국에서 주목해야 하는지</h4>
+            <ul class="facts">
+              <li>객단가가 달라집니다. 같은 콘텐츠라도 <em>함께 보는 회차</em>는 특별 요금이 붙고, 특별상영 매출 증가율이 그걸 보여줍니다.</li>
+              <li>브랜드가 끼어들 자리가 명확합니다. 응원봉·슬로건·굿즈처럼 <em>손에 쥐는 물건</em>이 필수 준비물이 되기 때문입니다.</li>
+              <li>온라인으로도 복제 가능합니다. 자사 앱에서 동시 재생 + 실시간 채팅만 붙여도 '같이 보는' 경험은 성립합니다. 극장 대관이 전제가 아닙니다.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h4>확산 경로</h4>
+            <div class="flow-wrap">
+              <div class="flow">
+                <div class="node"><span class="k">A</span>서브컬처 응원상영 관습</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">B</span>극장의 비영화 콘텐츠 확대 (2025~26)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">C</span>특별상영 매출 급증 (2025년 +46.3%)</div>
+                <div class="arrow">→</div>
+                <div class="node"><span class="k">D</span>해외 K-pop 행사 정식 편성 (2026.08)</div>
+                <div class="arrow">→</div>
+                <div class="node next"><span class="k">예상</span>발매일 '동시 감상회'의 상설화</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p>
+                  <b>신제품 발표를 '워치파티'로 바꿉니다.</b>
+                  라이브 커머스 대신, 제품 개발 과정을 30분짜리 영상으로 만들어
+                  고객 200명과 <em>정해진 시각에 동시 재생</em>합니다. 채팅으로 들어온 질문에 담당자가 그 자리에서 답하고,
+                  참여자에게는 '1회차 관람' 표시를 남깁니다.
+                  극장 대관 없이 자사 앱만으로 되고, 다시보기와 달리 <em>같은 시각에 모였다는 사실</em>이 커뮤니티를 만듭니다.
+                </p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p>
+                  <b>'응원봉 들고 극장 가는 법' 실용 가이드.</b>
+                  상영관별 응원봉 허용 여부, 소리 내도 되는 회차 구분, 좌석 추천, 반입 규정을
+                  직접 확인해 표로 만듭니다. 검색으로는 안 나오는 정보라 저장이 걸립니다.
+                  릴스는 싱어롱 상영 직후 <em>관객석 소리만</em> 담은 30초 영상 —
+                  화면 없이 소리만으로 현장을 전달하는 편이 오히려 몰입도가 높습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="closing">
+          <div>
+            <h4>오늘 한 줄 요약 — K-POP</h4>
+            <p class="oneline">
+              무대 위에서는 <em>사람이 아닌 존재</em>를 최고 제작진이 만들기 시작했고,
+              객석에서는 <em>팬이 출연자</em>가 되며,
+              관람석에서는 <em>보는 행위 자체가 참여</em>로 바뀌고 있습니다. 셋 다 "누가 무대에 서는가"를 다시 묻는 질문입니다.
+            </p>
+          </div>
+          <div>
+            <h4>다음 단계 후보</h4>
+            <ul class="watchlist">
+              <li><b>빅뱅 20주년 월드투어</b> — 8월 21~23일 고양종합운동장 시작, 내년 2월까지 19개 도시 33회. 장수 팬덤이 얼마나 다시 소환되는지가 '레거시 IP' 재가동의 기준점이 됩니다.</li>
+              <li><b>프로젝트 그룹의 수명 실험</b> — 웨이크원이 ALPHA DRIVE ONE에 5년 활동을 보장했습니다. 짧게 쓰고 해체하던 공식이 바뀌는지 지켜볼 만합니다.</li>
+              <li><b>플랫폼 앨범과 실물의 공존</b> — 2026년 상반기 음반 판매가 4,953만 장(+23.4%)으로 역대 최고인데, 동시에 QR 기반 플랫폼 앨범과 친환경 패키지가 늘고 있습니다(2026.07.30 집계). 대체가 아니라 병행이라는 점이 관전 포인트입니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="method" style="margin-top:38px;">
+        <b>선정 방식.</b> 오늘부터는 <b>최근 2주(2026.07.30~08.13) 안에 새로 관측된 변화</b>만 후보로 올렸습니다.
+        트렌드 자체가 그 이전에 시작됐더라도, 이 기간 안에 확산·브랜드 진입·서비스 출시·한국 유입 같은 새 움직임이 확인된 경우에만 실었습니다.
+        각 항목은 서로 독립적인 신호 2개 이상이 확인된 것만 선정했고, 최초 발원지가 불확실하면 단정하지 않고 '현재 확인되는 초기 확산 지점'으로 적었습니다.
+        근거가 약한 대목에는 회색 표시를 달아 사실과 해석을 구분했습니다.
+      </div>
+    </article>
+
+    <!-- ══════════════════════ 2026.08.12 ══════════════════════ -->
+    <article class="report" data-date="2026-08-12" hidden>
+
+      <div class="lede">
+        <p class="dateline">2026. 08. 12 &nbsp;·&nbsp; WED &nbsp;·&nbsp; 창간호</p>
+        <h1>보는 자리에서 일어나는 중</h1>
+        <p class="thesis">
+          최상류에서는 <em>말하는 방식</em>이, 상류에서는 <em>콘텐츠의 형식</em>이,
+          중류에서는 <em>소비자가 손에 쥐는 물건</em>이 각각 바뀌고 있습니다.
+          <span class="caveat">이 회차는 2주 기준을 적용하기 전에 발행한 기록입니다 — 1·2번은 관측 시점이 6~7월로 다소 앞섭니다</span>
+        </p>
+      </div>
+
+      <section class="cat" data-cat="general">
+        <div class="cat-head">
+          <h2>종합 트렌드</h2>
+          <span class="sub">소비 · 콘텐츠 · 마케팅</span>
+        </div>
+
+        <section class="trend" data-stage="up" data-title="'무심한 척'의 종료 — 넷플릭스 다큐 인터뷰 포맷">
+          <div class="stage-row">
+            <span class="chip">최상류</span>
+            <span class="stage-meta">국내 유입 전 · 관측 2026.06~07</span>
+          </div>
+          <h3>'무심한 척'의 종료 — 넷플릭스 다큐 인터뷰 포맷</h3>
+          <p class="what">
+            의자에 앉아 핀마이크를 다는 시늉을 하고, 카메라를 정면으로 보며 자기 이야기를 고백하듯 털어놓는 포맷입니다.
+            진짜 변화는 톤에 있습니다 — 몇 년간 SNS를 지배한 <em>'무심한 척(nonchalant)'</em>을 버리고 대놓고 진지하게 말하는 태도입니다.
+          </p>
+          <div class="block">
+            <h4>핵심 근거</h4>
+            <ul class="facts">
+              <li>영어권 틱톡에서 6월 16일(@borderbandittx)·6월 30일(@wassupa1ex) 영상을 계기로 확산.
+                <cite><a href="https://knowyourmeme.com/memes/preparing-for-my-netflix-documentary">Know Your Meme</a> · <a href="https://www.dictionary.com/culture/memes/netflix-documentary-meme">Dictionary.com</a></cite>
+              </li>
+              <li>인스타그램 릴스로 넘어온 시점은 7월 말~8월 초. 넷플릭스 공식 계정이 빈 의자 사진으로 참여했습니다.
+                <cite><a href="https://newengen.com/insights/instagram-trends/">New Engen</a> · <a href="https://tribune.com.pk/story/2618464/what-is-the-netflix-documentary-meme-viral-tiktok-trend-explained">The Express Tribune</a></cite>
+              </li>
+              <li>같은 주 트렌드 리스트에 'Not Very Nonchalant'(무심함 거부)가 나란히 올라온 점에서, 별개 밈이 아니라 같은 정서 이동으로 읽었습니다.</li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p><b>'우리 제품 다큐멘터리' 인터뷰 시리즈.</b> 실제 직원을 접이식 의자에 앉히고 핀마이크 시늉 → 하단 이름표 자막 → 30초 안에 실패담 하나를 실명으로 고백. 스튜디오 대신 창고·주방이 오히려 낫습니다. 시즌1 5편, 마지막 편에만 대표가 등장.</p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p><b>톤 비교 카드뉴스.</b> 같은 제품 설명을 '무심한 척 카피'와 '진심 카피' 두 버전으로 써서 5쌍 나란히 놓고, 마지막 장에서 어느 쪽이 저장·공유가 많았는지 수치를 공개합니다.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="trend" data-stage="mid" data-title="실사 인터랙티브 드라마 게임(FMV)">
+          <div class="stage-row">
+            <span class="chip">상류</span>
+            <span class="stage-meta">국내 진입 시작 · 관측 2026.06~07</span>
+          </div>
+          <h3>실사 인터랙티브 드라마 게임(FMV)</h3>
+          <p class="what">
+            배우가 실제로 연기한 실사 영상 위에서 시청자가 선택지를 눌러 이야기를 분기시키는 형식입니다.
+            중국 궁중극·연애물을 타고 되살아났고, 국내 제작사와 영화 배급사가 뛰어들었습니다.
+          </p>
+          <div class="block">
+            <h4>핵심 근거</h4>
+            <ul class="facts">
+              <li>스토리타코와 쇼박스가 신작 FMV 공동 제작, 촬영 돌입(2026.07.21 보도). 이유비·표은지·안젤리나 다닐로바 등 출연, 16화 분기 구조.
+                <cite><a href="https://v.daum.net/v/20260721161201620">데일리 보도</a> · <a href="https://www.issuemaker.kr/news/articleView.html?idxno=51604">이슈메이커</a></cite>
+              </li>
+              <li>중국발 〈성세천하: 여제의 탄생〉이 한국 스팀에서 평가 99% '압도적으로 긍정적'. 2편은 2026년 6월 9일 출시, 영상 분량 약 1,000분.
+                <cite><a href="https://store.steampowered.com/app/3478050/Road_To_Empress/?l=koreana">Steam</a> · <a href="https://v.daum.net/v/pjJc5Ufzy0">게임메카</a></cite>
+              </li>
+              <li>게임 매체는 부활 배경으로 "마이크로 드라마를 더 인터랙티브하게 즐기고 싶다는 수요"를 지목합니다.
+                <cite><a href="https://www.gamevu.co.kr/news/articleView.html?idxno=54966">게임뷰</a></cite>
+              </li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p><b>인스타 스토리 설문 스티커만으로 만드는 선택형 실사 광고.</b> 2지선다 3단계 = 8개 엔딩. 배우 1명, 하루 촬영, 컷 24개면 충분합니다. 엔딩 캡처를 DM으로 보내면 샘플 증정 구조로 리드까지 회수합니다.</p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p><b>좌우 분할 체험기 릴스.</b> 에디터 두 명이 같은 장면에서 다른 선택지를 눌러 다른 결말을 맞는 화면을 나란히. 카드뉴스는 '숏드라마에서 FMV로 넘어간 지도'를 연표로 정리합니다.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="trend" data-stage="low" data-title="중국 캐릭터 IP의 한국 직진출 러시">
+          <div class="stage-row">
+            <span class="chip">중류</span>
+            <span class="stage-meta">흐름으로 확인됨 · 보도 2026.08.05</span>
+          </div>
+          <h3>중국 캐릭터 IP의 한국 직진출 러시</h3>
+          <p class="what">
+            중국 캐릭터 IP 회사들이 라이선스 계약이 아니라 직접 팝업과 직영 유통으로 한국에 들어오고 있습니다.
+            IP 개발부터 굿즈 제작, 오프라인 판매까지 한 회사가 통째로 쥐는 구조입니다.
+          </p>
+          <div class="block">
+            <h4>핵심 근거</h4>
+            <ul class="facts">
+              <li>팝마트 코리아 매출 2023년 95억 원 → 2025년 1,255억 원(3년 13배), 영업이익 8억 → 104억 원. HERE(와쿠쿠·시노노), 52TOYS, 미니소(TOP TOY), HEYONE(OZAI) 등 최소 5개사가 동시 확장에 들어갔습니다.
+                <cite><a href="http://www.apparelnews.co.kr/news/news_view/?cate=CAT11Z&amp;idx=226710">어패럴뉴스, 2026.08.05</a></cite>
+              </li>
+              <li>HERE의 한국 첫 공식 팝업이 용산 아이파크몰 6층에서 2026년 7월 3일~9월 28일 운영 중입니다.
+                <cite><a href="http://www.sisunnews.co.kr/news/articleView.html?idxno=241017">시선뉴스</a></cite>
+              </li>
+            </ul>
+          </div>
+          <div class="block">
+            <h4>활용 아이디어</h4>
+            <div class="ideas">
+              <div class="idea">
+                <h5>브랜드 · 마케터</h5>
+                <p><b>캐릭터를 '붙이지' 말고 '달 수 있게' 설계.</b> 가방·파우치에 규격화된 D링을 넣고 팝업에서 '내 캐릭터 데려와 달기' 부스를 운영하면, 라이선스 비용 없이 그 IP의 트래픽만 흡수할 수 있습니다.</p>
+              </div>
+              <div class="idea">
+                <h5>매거진 · SNS 콘텐츠</h5>
+                <p><b>'라부부 말고' 캐릭터 도감 카드뉴스.</b> 소속사 / 정가 / 살 수 있는 곳 / 리셀가를 표로 통일. 릴스는 지하철·카페에서 목격 횟수를 직접 세는 3개월 정량 관찰기.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="closing">
+          <div>
+            <h4>오늘 한 줄 요약</h4>
+            <p class="oneline">
+              소비자가 콘텐츠 앞에 앉아 있기를 그만두고 있습니다. 말하는 방식이 '무심한 척'에서 '직접 고백'으로,
+              콘텐츠가 '보는 드라마'에서 '고르는 드라마'로, 그 결과가 '들고 다니는 캐릭터'라는 물건으로 굳습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <div class="empty" id="empty" hidden></div>
+
+  </main>
+</div>
+
+<script>
+  var REPORTS = [
+    { date: "2026-08-13", label: "8월 13일 리포트", note: "AI 대본 놀이 · K-디저트 투어리즘 · 버추얼 아이돌 제작진" },
+    { date: "2026-08-12", label: "8월 12일 리포트", note: "창간호 — 무심함의 종료 · 실사 FMV · 중국 캐릭터 IP" }
+  ];
+
+  (function () {
+    var state = { date: REPORTS[0].date, cat: "general", stage: "all" };
+
+    var archiveBox = document.getElementById("archive");
+    var tocBox     = document.getElementById("toc");
+    var countEl    = document.getElementById("fcount");
+    var emptyEl    = document.getElementById("empty");
+    var reports    = [].slice.call(document.querySelectorAll(".report"));
+    var tabs       = [].slice.call(document.querySelectorAll(".tab"));
+    var fchips     = [].slice.call(document.querySelectorAll(".fchip"));
+
+    REPORTS.forEach(function (r) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.innerHTML = '<span class="a-date"></span><span class="a-note"></span>';
+      b.querySelector(".a-date").textContent = r.label;
+      b.querySelector(".a-note").textContent = r.note;
+      b.addEventListener("click", function () { state.date = r.date; render(); });
+      b.dataset.date = r.date;
+      archiveBox.appendChild(b);
+    });
+
+    tabs.forEach(function (t) {
+      t.addEventListener("click", function () { state.cat = t.dataset.cat; render(); });
+    });
+
+    fchips.forEach(function (c) {
+      c.addEventListener("click", function () { state.stage = c.dataset.stage; render(); });
+    });
+
+    function render() {
+      [].slice.call(archiveBox.children).forEach(function (b) {
+        b.setAttribute("aria-current", b.dataset.date === state.date ? "true" : "false");
+      });
+      tabs.forEach(function (t) {
+        t.setAttribute("aria-selected", t.dataset.cat === state.cat ? "true" : "false");
+      });
+      fchips.forEach(function (c) {
+        c.setAttribute("aria-pressed", c.dataset.stage === state.stage ? "true" : "false");
+      });
+
+      var active = null;
+      reports.forEach(function (r) {
+        var on = r.dataset.date === state.date;
+        r.hidden = !on;
+        if (on) active = r;
+      });
+
+      var shown = [];
+      if (active) {
+        [].slice.call(active.querySelectorAll(".cat")).forEach(function (c) {
+          var onCat = c.dataset.cat === state.cat;
+          c.hidden = !onCat;
+          if (!onCat) return;
+          [].slice.call(c.querySelectorAll(".trend")).forEach(function (t) {
+            var onStage = state.stage === "all" || t.dataset.stage === state.stage;
+            t.hidden = !onStage;
+            if (onStage) shown.push(t);
+          });
+          var closing = c.querySelector(".closing");
+          if (closing) closing.hidden = state.stage !== "all";
+        });
+      }
+
+      var hasCat = active && active.querySelector('.cat[data-cat="' + state.cat + '"]');
+      var method = active ? active.querySelector(".method") : null;
+      if (method) method.hidden = !hasCat || state.stage !== "all";
+
+      if (!hasCat) {
+        emptyEl.hidden = false;
+        emptyEl.textContent = "이 날짜의 리포트에는 " +
+          (state.cat === "kpop" ? "K-POP" : "종합 트렌드") +
+          " 카테고리가 없습니다. 다른 날짜를 선택해 보세요.";
+      } else if (shown.length === 0) {
+        emptyEl.hidden = false;
+        emptyEl.textContent = "선택한 단계에 해당하는 트렌드가 없습니다.";
+      } else {
+        emptyEl.hidden = true;
+      }
+
+      countEl.textContent = shown.length > 0 ? shown.length + "개 표시 중" : "";
+
+      tocBox.innerHTML = "";
+      shown.forEach(function (t, i) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = "#" + (t.id || "");
+        var n = document.createElement("span");
+        n.className = "n";
+        n.textContent = String(i + 1).padStart(2, "0");
+        a.appendChild(n);
+        a.appendChild(document.createTextNode(t.dataset.title || ""));
+        a.addEventListener("click", function (e) {
+          if (!t.id) { e.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" }); }
+        });
+        li.appendChild(a);
+        tocBox.appendChild(li);
+      });
+    }
+
+    render();
+  })();
+</script>
+</body>
+</html>
