@@ -3,8 +3,7 @@
 MZ세대 소비문화·콘텐츠·마케팅 트렌드를 **최상류 / 상류 / 중류** 세 단계로 나눠 기록하는 일일 리포트입니다.
 아직 대중화되지 않았지만 앞으로 한국 시장에 영향을 줄 가능성이 있는 신호를 먼저 잡는 것이 목적입니다.
 
-🔗 **리포트 보기** — `https://<GitHub 계정>.github.io/trend-radar/`
-*(저장소 Settings → Pages에서 Source를 `main` 브랜치 `/ (root)`로 지정하면 활성화됩니다. 주소가 정해지면 이 줄을 실제 링크로 바꿔 주세요.)*
+🔗 **[리포트 보기 → jenzeae-c.github.io/trend-radar](https://jenzeae-c.github.io/trend-radar/)**
 
 ---
 
