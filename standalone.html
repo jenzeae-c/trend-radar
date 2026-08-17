@@ -428,6 +428,57 @@
     font-size: 15.5px;
   }
 
+  /* 접히는 소개 블록 */
+  .about {
+    border: 1px solid var(--hair);
+    border-radius: 12px;
+    background: var(--tint);
+    margin-bottom: 34px;
+    max-width: 68ch;
+  }
+
+  .about > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--blue-deep);
+  }
+  .about > summary::-webkit-details-marker { display: none; }
+
+  .about > summary::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-left: auto;
+    border-right: 1.5px solid var(--faint);
+    border-bottom: 1.5px solid var(--faint);
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .15s ease;
+  }
+  .about[open] > summary::after { transform: rotate(-135deg) translateY(-1px); }
+
+  .about > summary:hover { color: var(--blue); }
+
+  .about .about-body {
+    padding: 0 16px 16px;
+    font-size: 15px;
+    line-height: 1.72;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .about .about-body .ref {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--faint);
+  }
+
   @media (max-width: 900px) {
     body { font-size: 16.5px; }
     .shell { grid-template-columns: 1fr; row-gap: 34px; }
@@ -474,6 +525,17 @@
   </aside>
 
   <main class="main">
+
+    <details class="about">
+      <summary>오늘의 트렌드 레이더는 어떤 곳인가요?</summary>
+      <p class="about-body">
+        매일 12시 30분에 자동 발행되는 트렌드 리포트예요. 이미 다 아는 유행 대신, 떠오르는 트렌드들을
+        <b class="pt">최상류 · 상류 · 중류</b> 3단계로 나눠 기록합니다.
+        종합 트렌드와 K-POP 카테고리로 나뉘며, 트렌드마다 브랜드에서 활용할 수 있는 방법 ·
+        매거진 콘텐츠로 활용할 수 있는 방법 아이디어를 함께 제시하고 있습니다.
+        <span class="ref">활용 아이디어는 참고용입니다.</span>
+      </p>
+    </details>
 
     <!-- ══════════════════════ 2026.08.17 ══════════════════════ -->
     <article class="report" data-date="2026-08-17">
