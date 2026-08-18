@@ -180,7 +180,63 @@
     align-items: start;
   }
 
-  .rail { position: sticky; top: 116px; display: flex; flex-direction: column; gap: 26px; }
+  .rail {
+    position: sticky;
+    top: 116px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    max-height: calc(100vh - 185px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  /* 접히는 아카이브 */
+  .arch { min-height: 0; }
+  .arch > summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--hair);
+    margin-bottom: 10px;
+  }
+  .arch > summary::-webkit-details-marker { display: none; }
+  .arch > summary::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin-left: auto;
+    flex: none;
+    border-right: 1.5px solid var(--faint);
+    border-bottom: 1.5px solid var(--faint);
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .15s ease;
+  }
+  .arch[open] > summary::after { transform: rotate(-135deg) translateY(-1px); }
+  .arch > summary:hover { color: var(--blue); }
+  .arch > summary:hover::after { border-color: var(--blue); }
+  .arch-count { font-weight: 700; color: var(--faint); letter-spacing: 0; }
+  .arch[open] > summary .arch-count { color: var(--blue-deep); }
+
+  .arch-body {
+    max-height: 44vh;
+    min-height: 170px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-right: 2px;
+  }
+  /* 아직 더 스크롤할 게 남았을 때만 아래를 흐리게 */
+  .arch-body.is-more {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 30px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 30px), transparent);
+  }
 
   .rail-head {
     font-size: 12px;
@@ -558,7 +614,8 @@
   @media (max-width: 900px) {
     body { font-size: 16.5px; }
     .shell { grid-template-columns: 1fr; row-gap: 34px; }
-    .rail { position: static; order: 2; border-top: 1px solid var(--hair); padding-top: 26px; }
+    .rail { position: static; order: 2; border-top: 1px solid var(--hair); padding-top: 26px; max-height: none; overflow-y: visible; }
+    .arch-body { max-height: none; overflow-y: visible; }
     .main { order: 1; }
     .trend h3 { max-width: none; }
   }
@@ -589,11 +646,13 @@
 <div class="shell">
 
   <aside class="rail">
-    <div>
-      <div class="rail-head">지난 리포트</div>
-      <div class="archive" id="archive"></div>
-      <div class="rail-note">리포트는 발행될 때마다 날짜별로 이 칸에 쌓입니다.</div>
-    </div>
+    <details class="arch" open>
+      <summary><span class="arch-label">지난 리포트 확인</span><span class="arch-count" id="archCount"></span></summary>
+      <div class="arch-body">
+        <div class="archive" id="archive"></div>
+        <div class="rail-note">리포트는 발행될 때마다 날짜별로 이 칸에 쌓입니다.</div>
+      </div>
+    </details>
     <div>
       <div class="rail-head">이 리포트 목차</div>
       <ul class="toc" id="toc"></ul>
@@ -3770,6 +3829,34 @@
       archiveBox.appendChild(b);
     });
 
+    var archCount = document.getElementById("archCount");
+    var archBox   = document.querySelector(".arch");
+
+    function syncArchLabel() {
+      if (!archCount) return;
+      if (archBox && !archBox.open) {
+        var cur = REPORTS.filter(function (r) { return r.date === state.date; })[0];
+        archCount.textContent = cur ? cur.label.replace(" 리포트", "") : "";
+      } else {
+        archCount.textContent = REPORTS.length + "개";
+      }
+    }
+    var archBody = document.querySelector(".arch-body");
+
+    function syncArchFade() {
+      if (!archBody) return;
+      var more = archBody.scrollHeight - archBody.clientHeight - archBody.scrollTop > 2;
+      archBody.classList.toggle("is-more", more);
+    }
+    if (archBody) archBody.addEventListener("scroll", syncArchFade);
+    window.addEventListener("resize", syncArchFade);
+
+    if (archBox) archBox.addEventListener("toggle", function () {
+      syncArchLabel();
+      syncArchFade();
+    });
+    syncArchFade();
+
     tabs.forEach(function (t) {
       t.addEventListener("click", function () { state.cat = t.dataset.cat; render(); });
     });
@@ -3782,6 +3869,7 @@
       [].slice.call(archiveBox.children).forEach(function (b) {
         b.setAttribute("aria-current", b.dataset.date === state.date ? "true" : "false");
       });
+      syncArchLabel();
       tabs.forEach(function (t) {
         t.setAttribute("aria-selected", t.dataset.cat === state.cat ? "true" : "false");
       });
