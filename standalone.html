@@ -428,6 +428,81 @@
     font-size: 15.5px;
   }
 
+  /* 비운 자리 — 기준 미달 후보 (접힘) */
+  .gap {
+    border: 1px dashed var(--hair);
+    border-radius: 12px;
+    background: var(--tint);
+    margin-bottom: 28px;
+    max-width: 68ch;
+  }
+  .gap > summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 16px;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink-2);
+  }
+  .gap > summary::-webkit-details-marker { display: none; }
+  .gap > summary::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-left: auto;
+    flex: none;
+    border-right: 1.5px solid var(--faint);
+    border-bottom: 1.5px solid var(--faint);
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .15s ease;
+  }
+  .gap[open] > summary::after { transform: rotate(-135deg) translateY(-1px); }
+  .gap > summary:hover { color: var(--blue); }
+  .gap > summary b { color: var(--blue-deep); }
+  .gap > summary .g-count { font-weight: 600; color: var(--faint); }
+
+  .gap > summary .g-label { flex: 1 1 auto; min-width: 0; }
+
+  .gap-body { padding: 0 16px 4px; }
+  .gap-why { margin: 0; font-size: 14.5px; line-height: 1.72; color: var(--muted); }
+
+  .nearlist { list-style: none; margin: 12px 0 0; padding: 0; }
+  .nearlist > li { padding: 14px 0; border-top: 1px solid var(--hair); }
+  .nearlist > li:last-child { padding-bottom: 16px; }
+  .near-head { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-bottom: 7px; }
+  .near-head b { font-size: 15px; letter-spacing: -0.02em; }
+  .near-rank {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--blue-deep);
+    background: var(--blue-tint);
+    border: 1px solid var(--blue);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  .near-rank.soft {
+    color: var(--muted);
+    background: #FFFFFF;
+    border-color: var(--hair);
+  }
+  .near-tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--faint);
+    background: #FFFFFF;
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    padding: 2px 8px;
+  }
+  .nearlist p { margin: 0; font-size: 14.5px; line-height: 1.72; color: var(--ink-2); }
+  .nearlist .near-if { margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+  .near-if b { color: var(--ink-2); font-weight: 600; }
+
   /* 접히는 소개 블록 */
   .about {
     border: 1px solid var(--hair);
@@ -675,24 +750,64 @@
           </div>
         </section>
 
-        <div class="empty" style="margin-bottom:28px;">
-          종합 <b>상류</b>는 오늘 비웠습니다. "국내에 슬슬 보이기 시작한" 자리인데, 붙잡고 있던 후보들이
-          날짜에서 걸렸어요.
-          <br><br>
-          <b>치폴레 강남 1호점</b>은 사흘째 같은 결과입니다. 오늘도 오픈 소식이 없었고, 확인되는 건
-          아시아 2호점이 신세계 강남점 지하 식품관에 9월 말 유력이라는 6월 16일 보도뿐이었습니다.
-          1호점보다 2호점 소식이 먼저 나온 상태가 두 달째 이어지는 중입니다.
-          <br><br>
-          <b>스티커 교환</b>도 아쉬웠습니다. 일본 고교생 조사에서 유행하는 '것' 1위(14.5%)로 꼽혔고,
-          국내 지그재그 데이터에서도 스티커 거래가 20대 16%·30대 79% 늘었거든요. 그런데 일본 조사 발표가
-          6월 30일이라 기준 밖이고, 국내에서 이걸 '교환 문화'로 다룬 자료는 못 찾았습니다.
-          <br><br>
-          <b>지금 보고 있는 초기 신호</b> — ① 셋로그의 일본 역상륙: 국내 스타트업 뉴챗이 만든 2초 브이로그 앱이
-          일본 Z세대를 훑고 있습니다. 8월 발표된 학생 479명 조사에서 인지율 91.4%, 이용자의 90%가 최근 3개월 내
-          시작. 국내 브랜드가 이 앱을 일본 마케팅 채널로 쓰는 사례가 나오면 본선에 올립니다.
-          ② 스티커 교환의 국내 상륙: 다이소나 문구 브랜드가 교환용 포맷을 실제 상품으로 내놓는 시점이 기준일입니다.
-          ③ 편의점 스프링클 케이크의 신규 확산: GS25·이마트24까지 번지면 그 날짜로 다시 봅니다.
-        </div>
+        <details class="gap" data-gap="mid">
+          <summary><span class="g-label">비운 자리 — 종합 <b>상류</b> <span class="g-count">· 여기까지 온 후보 4</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              "국내에 슬슬 보이기 시작한" 자리인데, 붙잡고 있던 후보들이 대부분 날짜에서 걸렸습니다.
+              탈락시킨 것들도 어디까지 왔는지는 남겨 둡니다.
+            </p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">국내 진입 미확인</span>
+                  <b>치폴레 강남 1호점</b>
+                </div>
+                <p>
+                  사흘째 같은 결과입니다. 오늘도 오픈 소식은 없었고, 확인되는 건 아시아 2호점이 신세계 강남점
+                  지하 식품관에 9월 말 유력이라는 6월 16일 보도뿐이에요. 1호점보다 2호점 소식이 먼저 나온
+                  상태가 두 달째입니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 1호점 오픈일이 공식 공지되는 날.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">날짜 초과</span>
+                  <b>스티커 교환</b>
+                </div>
+                <p>
+                  일본 고교생 조사에서 유행하는 '것' 1위(14.5%), 국내 지그재그에서도 스티커 거래가
+                  20대 16%·30대 79% 늘었습니다. 숫자만 보면 충분한데 일본 조사 발표일이 6월 30일이라
+                  2주 기준 밖이고, 국내에서 이걸 '교환 문화'로 다룬 자료는 못 찾았습니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 다이소나 문구 브랜드가 교환용 포맷을 실제 상품으로 내놓는 시점.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">관찰 중</span>
+                  <span class="near-tag">독립 신호 1개</span>
+                  <b>셋로그의 일본 역상륙</b>
+                </div>
+                <p>
+                  국내 스타트업 뉴챗이 만든 2초 브이로그 앱이 일본 Z세대를 훑고 있습니다. 8월 발표된 학생
+                  479명 조사에서 인지율 91.4%, 이용자의 90%가 최근 3개월 안에 시작했다고 답했어요.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 국내 브랜드가 이 앱을 일본 마케팅 채널로 쓰는 사례.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">중류 이하</span>
+                  <span class="near-tag">확산 정체</span>
+                  <b>편의점 스프링클 케이크</b>
+                </div>
+                <p>이미 퍼진 뒤라 새 움직임이 없으면 다시 올릴 이유가 없는 쪽입니다.</p>
+                <p class="near-if"><b>승격 조건</b> — GS25·이마트24까지 번지면 그 날짜로 다시 봅니다.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <!-- 중류 -->
         <section class="trend" data-stage="low" id="g2-0818" data-title="20대가 사우나 용품을 사고 30대가 말랑이를 산다">
@@ -942,21 +1057,58 @@
           </div>
         </section>
 
-        <div class="empty" style="margin-bottom:28px;">
-          K-POP <b>상류</b>와 <b>중류</b>는 둘 다 비웠습니다. 하필 이번 주가 데뷔 직전 구간이라
-          '나왔지만 팬덤 안에 머무는' 자리에 들어갈 게 없었어요. 아워벌스데이 정식 데뷔가 내일(8월 19일),
-          튜이드가 8월 24일입니다. 어제 다룬 h.a.l.o의 음원도 8월 21일이라 아직 나오지 않았고요.
-          <br><br>
-          <b>패노미논</b>은 중류 후보로 마지막까지 검토했습니다. 하이브·SM·JYP·YG 네 곳이 합작법인을 세워
-          2027년 12월 서울아레나와 킨텍스에서 11일간 축제를 여는 계획이고, 문체부가 관광·안전·출입국을 맡는
-          민관 사업이라 엔터 밖이 확실히 움직이는 사례거든요. 그런데 추진계획 발표가 <b>7월 27일</b>이라
-          2주 기준을 3주 가까이 벗어났습니다. 8월 들어 새로 확인된 진전은 못 찾았어요.
-          <br><br>
-          <b>지금 보고 있는 초기 신호</b> — ① 아워벌스데이 정식 데뷔(8/19): 프리 데뷔를 Side A·B로 쪼갰던 팀이
-          완전체로 나오는 날입니다. 반응이 나오면 곧바로 상류 근거가 됩니다.
-          ② h.a.l.o 음원 '푸름주의보'(8/21): 소속사 넷이 모인 크로스오버 유닛이 실제로 통하는지 확인되는 시점.
-          ③ 패노미논 합작법인 설립 절차: 공정위 신고나 법인 등기 같은 실제 진전이 나오면 그날을 기준일로 다시 봅니다.
-        </div>
+        <details class="gap" data-gap="mid low">
+          <summary><span class="g-label">비운 자리 — K-POP <b>상류 · 중류</b> <span class="g-count">· 여기까지 온 후보 4</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              하필 이번 주가 데뷔 직전 구간입니다. '나왔지만 팬덤 안에 머무는' 자리에 넣을 물건이 아직
+              세상에 안 나왔어요. 대신 며칠 안에 판정이 뒤집힐 후보들이 몰려 있습니다.
+            </p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준중류</span>
+                  <span class="near-tag">날짜 초과 · 3주</span>
+                  <b>패노미논</b>
+                </div>
+                <p>
+                  하이브·SM·JYP·YG 네 곳이 합작법인을 세워 2027년 12월 서울아레나와 킨텍스에서 11일간
+                  축제를 여는 계획입니다. 문체부가 관광·안전·출입국을 맡는 민관 사업이라 엔터 밖이 확실히
+                  움직이는 사례인데, 추진계획 발표가 7월 27일이라 2주 기준을 3주 가까이 벗어났습니다.
+                  8월 들어 새로 확인된 진전은 못 찾았고요.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 공정위 신고나 법인 등기 같은 실제 진전이 나오는 날.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">발매 전 · D-1</span>
+                  <b>아워벌스데이 정식 데뷔</b>
+                </div>
+                <p>프리 데뷔를 Side A·B로 쪼갰던 팀이 내일(8월 19일) 완전체로 나옵니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 데뷔 후 팬덤 반응이 확인되면 곧바로 상류 근거가 됩니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">발매 전 · D-3</span>
+                  <b>h.a.l.o '푸름주의보'</b>
+                </div>
+                <p>소속사가 서로 다른 넷을 묶은 크로스오버 유닛의 첫 성적표가 8월 21일에 나옵니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 음원 반응이 팬덤 안에서라도 잡히면 상류로 올립니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">관찰 중</span>
+                  <span class="near-tag">발매 전 · D-6</span>
+                  <b>튜이드 데뷔</b>
+                </div>
+                <p>8월 24일입니다. 지금은 프로모션 일정 외에 확인되는 게 없습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 데뷔 방식 자체에 새로운 구조가 있으면 최상류로도 봅니다.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <div class="closing">
           <div>
@@ -983,7 +1135,8 @@
         서로 독립적인 신호가 2개 이상 확인된 것만 골랐습니다. 그래서 <b>오늘은 6개가 아니라 3개</b>입니다.
         종합 상류는 치폴레·스티커 교환이 각각 미확인과 날짜 초과로 걸려 비웠고, K-POP 상류·중류는
         이번 주 주요 발매가 전부 8월 19일 이후라 들어갈 게 없었습니다. 패노미논은 발표일이 7월 27일이라
-        제외했습니다.
+        제외했습니다. 비운 자리마다 어디까지 왔던 후보인지는 접힌 블록에
+        <b>준상류 · 준중류 · 관찰 중</b> 등급과 탈락 사유, 승격 조건으로 정리해 뒀습니다.
         종합 중류(세대 통념)는 수치의 상당 부분이 한 플랫폼 데이터라는 점, K-POP 최상류(비스테이지 SDK)는
         국내 기사들이 같은 보도자료를 공유한다는 점을 각각 회색 표시로 밝혀 뒀습니다.
         최초 발원지가 애매한 건 단정하지 않고 '지금 확인되는 초기 확산 지점'으로 적었습니다.
@@ -3521,6 +3674,10 @@
             var onStage = state.stage === "all" || t.dataset.stage === state.stage;
             t.hidden = !onStage;
             if (onStage) shown.push(t);
+          });
+          [].slice.call(c.querySelectorAll(".gap")).forEach(function (g) {
+            var stages = (g.dataset.gap || "").split(/\s+/);
+            g.hidden = !(state.stage === "all" || stages.indexOf(state.stage) >= 0);
           });
           var closing = c.querySelector(".closing");
           if (closing) closing.hidden = state.stage !== "all";
