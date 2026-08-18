@@ -469,6 +469,7 @@
 
   .gap-body { padding: 0 16px 4px; }
   .gap-why { margin: 0; font-size: 14.5px; line-height: 1.72; color: var(--muted); }
+  .gap-body > .gap-why:last-child { margin-bottom: 12px; }
 
   .nearlist { list-style: none; margin: 12px 0 0; padding: 0; }
   .nearlist > li { padding: 14px 0; border-top: 1px solid var(--hair); }
@@ -1165,26 +1166,54 @@
           <span class="sub">소비 · 콘텐츠 · 마케팅 — 오늘은 0개</span>
         </div>
 
-        <div class="empty" style="margin-bottom:28px;">
-          오늘 종합 트렌드는 하나도 못 실었습니다. 후보 세 개를 마지막까지 붙잡고 있었는데, 전부 비슷한 데서
-          걸렸어요. 새로 움직인 시점이 2주 밖이거나, 아직 확인이 덜 됐거나였습니다.
-          <br><br>
-          <b>치폴레 강남 1호점</b>은 "8월 오픈"이라는 예고만 벌써 여러 달째입니다. 오늘도 오픈 소식은 없었고
-          정확한 날짜조차 나오지 않았더라고요. 문을 열기 전까지는 몇 번을 다시 찾아봐도 결과가 같습니다.
-          <br><br>
-          <b>편의점 스프링클 케이크(닷케이크)</b>는 사실 가장 아까웠던 후보예요. 뉴욕의 '닷 케이크'가 틱톡에서
-          번지자 세븐일레븐과 CU가 비슷한 제품을 실제로 내놨거든요. 그런데 찾아보니 세븐일레븐의 첫 출시가
-          7월 9일, CU의 스프링클 마카롱이 7월 15일이었습니다. 지금도 매대에 남아 있긴 하지만 새로 움직인
-          시점 자체가 기준 밖입니다.
-          <br><br>
-          <b>몽치치 리바이벌</b>은 조금 다른 이유로 접었습니다. 국내에서 다시 인기를 얻고 있다는 정황은
-          여기저기 보이는데, 언제 어떤 계기로 다시 떴는지를 짚어주는 자료를 오늘까지 찾지 못했어요.
-          <br><br>
-          <b>지금 보고 있는 초기 신호</b> — ① 치폴레 강남 1호점 실제 오픈: 예고만 반년 가까이 밀리는 중입니다.
-          문 여는 순간 바로 후보로 올립니다. ② 편의점 스프링클 케이크의 신규 확산: GS25나 이마트24까지 번지면
-          그 시점을 새 기준일로 다시 봅니다. ③ 몽치치 국내 재유행의 계기: 어느 팝업이나 콜라보에서 불붙었는지가
-          확인되면 승격 후보가 됩니다.
-        </div>
+        <details class="gap" data-gap="up mid low">
+          <summary><span class="g-label">비운 자리 — 종합 <b>최상류 · 상류 · 중류</b> <span class="g-count">· 여기까지 온 후보 3</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              오늘 종합 트렌드는 하나도 못 실었습니다. 마지막까지 붙잡고 있던 셋이 전부 비슷한 데서 걸렸어요.
+              새로 움직인 시점이 2주 밖이거나, 아직 확인이 덜 됐거나였습니다.
+            </p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">국내 진입 미확인</span>
+                  <b>치폴레 강남 1호점</b>
+                </div>
+                <p>
+                  "8월 오픈"이라는 예고만 벌써 여러 달째입니다. 오늘도 오픈 소식은 없었고 정확한 날짜조차
+                  나오지 않았더라고요. 문을 열기 전까지는 몇 번을 다시 찾아봐도 결과가 같습니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 실제로 문을 여는 날. 그 순간 바로 후보로 올립니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">날짜 초과 · 5주</span>
+                  <b>편의점 스프링클 케이크(닷케이크)</b>
+                </div>
+                <p>
+                  가장 아까웠던 후보입니다. 뉴욕의 '닷 케이크'가 틱톡에서 번지자 세븐일레븐과 CU가 비슷한
+                  제품을 실제로 내놨거든요. 그런데 찾아보니 세븐일레븐 첫 출시가 7월 9일, CU의 스프링클
+                  마카롱이 7월 15일이었습니다. 지금도 매대에 남아 있긴 한데 새로 움직인 시점 자체가 기준 밖입니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — GS25나 이마트24까지 번지면 그 시점을 새 기준일로 다시 봅니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">관찰 중</span>
+                  <span class="near-tag">기준일 특정 불가</span>
+                  <b>몽치치 리바이벌</b>
+                </div>
+                <p>
+                  조금 다른 이유로 접었습니다. 국내에서 다시 인기를 얻고 있다는 정황은 여기저기 보이는데,
+                  언제 어떤 계기로 다시 떴는지를 짚어주는 자료를 오늘까지 찾지 못했어요.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 어느 팝업이나 콜라보에서 불붙었는지가 확인되는 날.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <div class="closing">
           <div>
@@ -1326,16 +1355,44 @@
           </div>
         </section>
 
-        <div class="empty" style="margin-bottom:28px;">
-          K-POP <b>상류</b>도 오늘은 비웠습니다. AEN은 8월 5일 데뷔 이후의 차트·반응 데이터를 찾아봤는데
-          아직 연예 전문지 보도 수준을 넘어서는 근거가 없었어요. 아워벌스데이는 정식 데뷔가 8월 19일이라
-          이틀 남았고, '이미 나왔지만 팬덤 안에 머무는' 단계로는 아직 넘어가지 않았습니다.
-          튜이드도 데뷔가 8월 24일이라 사정이 같습니다.
-          <br><br>
-          <b>지금 보고 있는 초기 신호</b> — ① 아워벌스데이 정식 데뷔(8/19): 실제 반응이 나오는 순간 상류로
-          옮길 근거가 생깁니다. ② AEN 데뷔 이후 첫 차트 성적: 음악방송·차트 데이터가 나오면 상류 판단에 씁니다.
-          ③ 튜이드 정식 데뷔(8/24): 프리뷰 반응과 정식 데뷔 반응을 비교할 시점이 곧 옵니다.
-        </div>
+        <details class="gap" data-gap="mid">
+          <summary><span class="g-label">비운 자리 — K-POP <b>상류</b> <span class="g-count">· 여기까지 온 후보 3</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              '이미 나왔지만 팬덤 안에 머무는' 자리인데, 오늘 후보 셋은 아직 나오지 않았거나 반응이 잡히지
+              않은 쪽이었습니다.
+            </p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">반응 데이터 없음</span>
+                  <b>AEN</b>
+                </div>
+                <p>8월 5일 데뷔 이후의 차트·반응 데이터를 찾아봤는데 아직 연예 전문지 보도 수준을 넘어서는 근거가 없었어요.</p>
+                <p class="near-if"><b>승격 조건</b> — 음악방송·차트 데이터가 나오면 상류 판단에 씁니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">발매 전 · D-2</span>
+                  <b>아워벌스데이 정식 데뷔</b>
+                </div>
+                <p>8월 19일입니다. 이틀 남았고, 팬덤 안에 머무는 단계로는 아직 넘어가지 않았습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 데뷔 후 실제 반응이 나오는 순간.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">관찰 중</span>
+                  <span class="near-tag">발매 전 · D-7</span>
+                  <b>튜이드 데뷔</b>
+                </div>
+                <p>8월 24일이라 사정이 같습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 프리뷰 반응과 정식 데뷔 반응을 비교할 수 있게 되는 시점.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <!-- 중류 -->
         <section class="trend" data-stage="low" id="k2-0817" data-title="콘서트장을 나온 팬이 뷰티 매장으로 갔다">
@@ -1507,24 +1564,61 @@
           <span class="sub">소비 · 콘텐츠 · 마케팅 — 오늘은 0개</span>
         </div>
 
-        <div class="empty" style="margin-bottom:28px;">
-          오늘은 종합 트렌드를 하나도 못 실었습니다. 억지로 채우는 것보다는 정직하게 비우는 쪽을 택했어요.
-          후보 세 개를 끝까지 검토했다가 접었습니다.
-          <b>엔젤헤어 초콜릿</b>(두바이 초콜릿 다음 타자로 해외 SNS에서 여전히 화제인 피스타치오·피스마니에 초콜릿)은
-          지금도 틱톡에서 잘 도는데, 국내에서는 '피스마니에 초콜릿'이라는 이름으로 이미 2025년 6월부터 알려져 있더라고요.
-          2주 기준으로 보면 이미 늦은 신호였습니다.
-          <b>강남의 글로벌 외식 브랜드 러시</b>(중국 차지, 미국 밴루엔에 이어 아시아 첫 매장으로 치폴레까지 강남역에 몰리는 흐름)는
-          실제로 벌어지고 있는 일이 맞는데, 가장 최근에 확정된 사건인 밴루엔 오픈이 7월 3일이고
-          치폴레는 8월 오픈이라고 예고된 지 오래인데도 오늘(8/16)까지 실제 오픈 소식을 확인하지 못했습니다.
-          <b>우베(Ube)</b>의 대형 식품기업 진입은 어제 회차에서도 보류했던 건인데, 오늘 다시 찾아봐도 가장 최근 근거가
-          여전히 7월 8일이라 그대로 보류했습니다.
-          <br><br>
-          <b>지금 보고 있는 초기 신호</b> — ① 치폴레 강남 1호점 실제 오픈: 예고만 반년 가까이 미뤄지는 중인데, 문 열고
-          실제 반응(오픈런·후기)이 나오면 바로 후보로 올립니다. ② 엔젤헤어 초콜릿의 국내 정식 유통: 지금은 지마켓·번개장터 같은
-          개인 구매대행뿐인데, 편의점이나 올리브영 같은 정식 채널에 들어오면 상류로 볼 수 있습니다.
-          ③ '식스세븐' 이후 다음 글로벌 챌린지 포맷: 이미 국내 학교·SNS까지 퍼져 정점을 지난 상태라 이번엔 제외했는데,
-          그다음 타자가 뭐가 될지는 계속 봐야 할 것 같습니다.
-        </div>
+        <details class="gap" data-gap="up mid low">
+          <summary><span class="g-label">비운 자리 — 종합 <b>최상류 · 상류 · 중류</b> <span class="g-count">· 여기까지 온 후보 4</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              오늘은 종합 트렌드를 하나도 못 실었습니다. 억지로 채우는 것보다는 정직하게 비우는 쪽을 택했어요.
+              끝까지 검토했다가 접은 후보들을 남겨 둡니다.
+            </p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">날짜 초과 · 1년</span>
+                  <b>엔젤헤어 초콜릿</b>
+                </div>
+                <p>
+                  두바이 초콜릿 다음 타자로 해외 SNS에서 여전히 화제인 피스타치오·피스마니에 초콜릿입니다.
+                  지금도 틱톡에서 잘 도는데, 국내에서는 '피스마니에 초콜릿'이라는 이름으로 이미 2025년 6월부터
+                  알려져 있더라고요. 2주 기준으로 보면 늦은 신호였습니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 지금은 지마켓·번개장터 같은 개인 구매대행뿐입니다. 편의점이나 올리브영 같은 정식 채널에 들어오면 상류로 봅니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">날짜 초과 · 6주</span>
+                  <b>강남의 글로벌 외식 브랜드 러시</b>
+                </div>
+                <p>
+                  중국 차지, 미국 밴루엔에 이어 아시아 첫 매장으로 치폴레까지 강남역에 몰리는 흐름입니다.
+                  실제로 벌어지고 있는 일이 맞는데, 가장 최근에 확정된 사건인 밴루엔 오픈이 7월 3일이었어요.
+                  치폴레는 8월 오픈이라고 예고된 지 오래인데도 오늘(8/16)까지 실제 오픈 소식을 확인하지 못했습니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 치폴레 1호점이 문 열고 오픈런·후기 같은 실제 반응이 나오는 날.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">날짜 초과 · 5주</span>
+                  <b>우베(Ube)의 대형 식품기업 진입</b>
+                </div>
+                <p>어제 회차에서도 보류했던 건인데, 오늘 다시 찾아봐도 가장 최근 근거가 여전히 7월 8일이라 그대로 뒀습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 8월 안에 다른 식품기업이 정규 라인업에 붙이는 사례.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">중류 이하</span>
+                  <span class="near-tag">정점 통과</span>
+                  <b>'식스세븐' 챌린지</b>
+                </div>
+                <p>이미 국내 학교·SNS까지 퍼져 정점을 지난 상태라 이번엔 제외했습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 이 포맷 자체보다 다음 타자가 뭐가 될지를 계속 봅니다.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <div class="closing">
           <div>
@@ -1756,15 +1850,61 @@
           </div>
         </section>
 
-        <div class="empty" style="margin-bottom:28px;">
-          오늘 K-POP <b>중류</b>는 비웠습니다. XMF 2026은 어제 이미 다뤘고, 8월 12일 2차 티켓도 매진됐다는 소식은 있었지만
-          단계가 실제로 더 이동한 건 아니라 중복 선정하지 않았습니다. 코르티스의 'REDRED'는 이미 지난 5월 멜론 주간차트 1위에
-          빌보드 버블링 언더 핫100까지 오르며 대중적으로 많이 알려진 상태라, 신선한 얼리 신호로 보기 어려워 제외했습니다.
-          <br><br>
-          <b>지금 보고 있는 초기 신호</b> — ① 아워벌스데이 실제 데뷔(8/19) 반응: 나오는 즉시 상류로 옮길 근거가 됩니다.
-          ② AEN 데뷔 앨범의 한일 양쪽 성적 비교: 양국 데이터가 쌓이면 상류·중류 판단에 쓸 수 있습니다.
-          ③ 하이브 튜이드의 실제 데뷔(8/24): 프리뷰 반응과 정식 데뷔 반응을 비교할 수 있는 시점이 다가오고 있습니다.
-        </div>
+        <details class="gap" data-gap="low">
+          <summary><span class="g-label">비운 자리 — K-POP <b>중류</b> <span class="g-count">· 여기까지 온 후보 5</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              팬덤 밖이 움직이는 자리인데, 오늘 후보는 이미 다뤘거나 이미 알려진 쪽이었습니다.
+            </p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">중류 이하</span>
+                  <span class="near-tag">단계 미이동</span>
+                  <b>XMF 2026</b>
+                </div>
+                <p>어제 이미 다뤘습니다. 8월 12일 2차 티켓도 매진됐다는 소식은 있었지만 단계가 실제로 더 이동한 건 아니라 중복 선정하지 않았어요.</p>
+                <p class="near-if"><b>승격 조건</b> — 비엔터 업종이 이 행사에 붙는 사례.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">중류 이하</span>
+                  <span class="near-tag">정점 통과</span>
+                  <b>코르티스 'REDRED'</b>
+                </div>
+                <p>지난 5월 멜론 주간차트 1위에 빌보드 버블링 언더 핫100까지 올라 이미 대중적으로 알려진 상태라, 신선한 얼리 신호로 보기 어려웠습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 없음. 이 곡 자체는 후보에서 내립니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">발매 전 · D-3</span>
+                  <b>아워벌스데이 정식 데뷔</b>
+                </div>
+                <p>8월 19일입니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 데뷔 반응이 나오는 즉시 상류로 옮길 근거가 됩니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">관찰 중</span>
+                  <span class="near-tag">데이터 축적 중</span>
+                  <b>AEN 데뷔 앨범의 한일 성적</b>
+                </div>
+                <p>한국과 일본 양쪽 데이터를 나란히 놓고 볼 수 있는 첫 사례입니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 양국 데이터가 쌓이면 상류·중류 판단에 씁니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">관찰 중</span>
+                  <span class="near-tag">발매 전 · D-8</span>
+                  <b>하이브 튜이드 데뷔</b>
+                </div>
+                <p>8월 24일입니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 프리뷰 반응과 정식 데뷔 반응을 비교할 수 있게 되는 시점.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <div class="closing">
           <div>
@@ -1914,13 +2054,35 @@
           </div>
         </section>
 
-        <div class="empty" style="margin-top:8px; margin-bottom:28px;">
-          오늘 <b>상류</b>와 <b>중류</b>는 비웠습니다. 후보 두 개를 보다가 접었어요.
-          우베가 편의점 디저트를 넘어 롯데웰푸드 같은 대형 식품기업 정규 라인업까지 들어간 건 실제 움직임이 맞는데,
-          가장 최근 근거가 7월 28일이라 2주 기준에서 벗어납니다.
-          '2026 is the new 2016' 노스탤지어 웨이브는 지난 2월에 이미 아이브 안유진, 레드벨벳 조이 같은 이름들이 붙었더라고요.
-          이 정도면 얼리 신호라고 부르기 어렵습니다. 억지로 채우지 않았습니다.
-        </div>
+        <details class="gap" data-gap="mid low" style="margin-top:8px;">
+          <summary><span class="g-label">비운 자리 — 종합 <b>상류 · 중류</b> <span class="g-count">· 여기까지 온 후보 2</span></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">후보 두 개를 보다가 접었습니다. 억지로 채우지 않았어요.</p>
+            <ul class="nearlist">
+              <li>
+                <div class="near-head">
+                  <span class="near-rank">준상류</span>
+                  <span class="near-tag">날짜 초과 · 2주+</span>
+                  <b>우베(Ube)의 대형 식품기업 진입</b>
+                </div>
+                <p>
+                  편의점 디저트를 넘어 롯데웰푸드 같은 대형 식품기업 정규 라인업까지 들어간 건 실제 움직임이
+                  맞는데, 가장 최근 근거가 7월 28일이라 2주 기준에서 벗어납니다.
+                </p>
+                <p class="near-if"><b>승격 조건</b> — 8월 안에 다른 식품기업이 정규 라인업에 붙이면 바로 다음 회차 후보입니다.</p>
+              </li>
+              <li>
+                <div class="near-head">
+                  <span class="near-rank soft">중류 이하</span>
+                  <span class="near-tag">정점 통과 · 2월부터</span>
+                  <b>'2026 is the new 2016' 노스탤지어 웨이브</b>
+                </div>
+                <p>지난 2월에 이미 아이브 안유진, 레드벨벳 조이 같은 이름들이 붙었더라고요. 이 정도면 얼리 신호라고 부르기 어렵습니다.</p>
+                <p class="near-if"><b>승격 조건</b> — 브랜드 캠페인이 이 프레임을 직접 쓰기 시작하면 다시 봅니다.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
 
         <div class="closing">
           <div>
@@ -2599,10 +2761,15 @@
           <span class="sub">아티스트 · 팬덤 · 공연 — 오늘은 2개</span>
         </div>
 
-        <div class="empty" style="margin-bottom:28px;">
-          오늘 <b>최상류</b>는 비웠습니다. 최근 2주 안에 독립적인 신호 2개 이상을 갖춘 후보를 찾지 못했습니다.
-          기준을 낮춰 채우는 대신 그대로 두었습니다.
-        </div>
+        <details class="gap" data-gap="up">
+          <summary><span class="g-label">비운 자리 — K-POP <b>최상류</b></span></summary>
+          <div class="gap-body">
+            <p class="gap-why">
+              최근 2주 안에 독립적인 신호 2개 이상을 갖춘 후보를 찾지 못했습니다. 기준을 낮춰 채우는 대신
+              그대로 두었어요. 이날은 이름을 남길 만큼 근접한 후보도 없었습니다.
+            </p>
+          </div>
+        </details>
 
         <!-- 상류 -->
         <section class="trend" data-stage="mid" id="k2-0814" data-title="OTT가 스폰서에서 '주최자'로">
