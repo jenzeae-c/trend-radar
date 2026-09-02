@@ -554,6 +554,36 @@
   .nearlist .near-if { margin-top: 6px; font-size: 13.5px; color: var(--muted); }
   .near-if b { color: var(--ink-2); font-weight: 600; }
 
+  /* K-POP 단계가 비었을 때 대신 싣는 컴백 소식 */
+  .comeback { max-width: 68ch; margin: 0 0 28px; }
+  .cb-head { margin-bottom: 4px; }
+  .cb-head h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .cb-why { margin: 0; max-width: 62ch; font-size: 14.5px; line-height: 1.72; color: var(--muted); }
+  .cblist { list-style: none; margin: 16px 0 0; padding: 0; }
+  .cblist > li { padding: 13px 0; border-top: 1px solid var(--hair); }
+  .cblist > li:last-child { border-bottom: 1px solid var(--hair); }
+  .cb-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+  .cb-date {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--blue-deep);
+    background: var(--blue-tint);
+    border-radius: 999px;
+    padding: 2px 9px;
+    flex: none;
+  }
+  .cb-row b { font-size: 15.5px; letter-spacing: -0.02em; }
+  .cb-title { font-size: 14px; color: var(--faint); font-weight: 500; }
+  .cblist p { margin: 0; font-size: 14.5px; line-height: 1.72; color: var(--ink-2); }
+  .cb-src { margin-top: 12px; font-size: 13px; color: var(--faint); }
+  .cb-src a { color: inherit; }
+
   /* 접히는 소개 블록 */
   .about {
     border: 1px solid var(--hair);
@@ -676,7 +706,7 @@
           오늘은 두 건입니다. 국립박물관 유물 분장 대회에 275팀이 접수해 13개 박물관이
           함께 여는 전국 행사가 됐고, 3주 가까이 멈춰 있던 틱톡 포맷 목록이 다시 돌기
           시작하면서 보류해 뒀던 포맷 하나가 두 번째 관측처를 얻었어요.
-          <span class="caveat">오늘은 2개 — 종합 상류와 K-POP 세 단계를 기준 미달로 비웠습니다</span>
+          <span class="caveat">오늘은 2개 — 종합 상류와 K-POP 세 단계가 기준 미달이고, K-POP 자리는 이번 회차부터 컴백 소식으로 채웁니다</span>
         </p>
       </div>
 
@@ -1059,8 +1089,69 @@
       <section class="cat" data-cat="kpop" hidden>
         <div class="cat-head">
           <h2>K-POP</h2>
-          <span class="sub">아티스트 · 팬덤 · 공연 — 오늘은 0개</span>
+          <span class="sub">아티스트 · 팬덤 · 공연 — 오늘은 0개 · 컴백 소식으로 대신합니다</span>
         </div>
+
+        <section class="comeback" data-gap="up mid low">
+          <div class="cb-head">
+            <h3>이번 주 컴백 — 9월 3일부터 11일까지</h3>
+            <p class="cb-why">
+              단계 기준을 통과한 트렌드가 없는 날에는 그 자리를 비워 두는 대신 가장 가까운
+              컴백을 정리합니다. 열흘 안쪽으로 날짜가 확정된 것만 담았고, 일정표가 되지 않도록
+              왜 눈여겨볼 만한지를 한 줄씩 붙였어요. 이번 주는 <b class="pt">솔로가 유난히
+              많습니다.</b>
+            </p>
+          </div>
+          <ul class="cblist">
+            <li>
+              <div class="cb-row"><span class="cb-date">9.03</span> <b>리사</b> <span class="cb-title">'SaWaDiKa' · 선공개 싱글</span></div>
+              <p>10월 23일 나올 첫 미니 앨범 'PRESS PLAY'의 선공개곡입니다. 제목이 태국어 인사말이라 고향을 앞에 세운 셈인데, 솔로 EP 자체가 처음이라 이번 싱글이 그 방향을 미리 보여 주는 자리가 됩니다.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.03</span> <b>권은비</b> <span class="cb-title">'DEJAVU' · 디지털 싱글</span></div>
+              <p>오늘 나옵니다. 미니 앨범 단위로 움직여 온 흐름에서 벗어난 단발 싱글이에요.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.03</span> <b>동해</b> <span class="cb-title">'A:LIVE' · 디지털 싱글</span></div>
+              <p>슈퍼주니어 D&amp;E 활동과 별개로 내는 솔로 싱글입니다.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.04</span> <b>NCT 텐</b> <span class="cb-title">'OUTWEST' · 싱글</span></div>
+              <p>데뷔 10주년 기념 싱글인데, 이번이 <b class="pt">제작 전 과정을 본인이 총괄한 첫 작업</b>입니다. 타이틀곡 작사에도 참여했고 수록곡은 'IRL' 한 곡이에요. 7월 태국에서 10주년 콘서트를 마친 뒤 내놓는 첫 결과물이라 솔로 노선이 어디로 향하는지가 여기서 보일 것 같습니다.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.04</span> <b>지수</b> <span class="cb-title">'CLICK' · 싱글</span></div>
+              <p>블랙핑크 멤버 둘이 이틀 간격으로 솔로를 냅니다. 같은 팀에서 이런 일정이 겹치는 건 흔한 그림은 아니에요.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.04</span> <b>몬스타엑스</b> <span class="cb-title">'The Phase' · EP</span></div>
+              <p>이번 주에 나오는 유일한 완전체 그룹 앨범입니다.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.07</span> <b>전소연</b> <span class="cb-title">'끝내주는 인생' · 정규 1집</span></div>
+              <p>(여자)아이들 리더의 <b class="pt">첫 정규</b>입니다. 2021년 미니 1집 'Windy' 이후 5년 2개월 만이고, 그동안 팀 앨범을 직접 써 온 사람이라 솔로 정규를 어떻게 채웠는지가 관전 포인트입니다.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.07</span> <b>민호</b> <span class="cb-title">'Make it hot' · 미니 2집</span></div>
+              <p>샤이니 민호의 두 번째 미니. 같은 날 베리베리가 미니 8집 'CONFETTI'를, 에반이 첫 미니 'DEATH OF ME'를 냅니다.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.08</span> <b>&amp;TEAM</b> <span class="cb-title">'Mark on Me' · 한국 미니 2집</span></div>
+              <p>일본을 거점으로 활동하는 하이브 소속 팀의 한국 앨범입니다. 같은 날 엑소 도경수가 미니 4집 'DOPAMINE'을 내고요.</p>
+            </li>
+            <li>
+              <div class="cb-row"><span class="cb-date">9.11</span> <b>르세라핌</b> <span class="cb-title">'Made My Night' · 싱글 2집</span></div>
+              <p>피지컬 싱글로 나옵니다. 같은 날 펜타곤이 데뷔 10주년 싱글 '겁쟁이'를 내는데, 이쪽은 멤버 구성이 여러 번 바뀐 뒤에 맞는 기념 앨범이라 성격이 다릅니다.</p>
+            </li>
+          </ul>
+          <p class="cb-src">
+            일정은 집계 사이트 두 곳과 국내 기사를 대조해 날짜가 확정된 것만 담았습니다.
+            <cite><a href="https://kpopofficial.com/kpop-comeback-schedule-september-2026/">KPOP OFFICIAL 9월 일정</a></cite>
+            <cite><a href="https://www.hellokpop.com/kpop/september-2026-k-pop-comebacks/">hellokpop 9월 일정</a></cite>
+            <cite><a href="https://www.tenasia.co.kr/article/2026083131944">텐아시아, 2026.08.31</a></cite>
+            <cite><a href="https://www.vogue.co.kr/2026/09/01/%EB%A6%AC%EC%82%AC%EC%9D%98-%EC%86%94%EB%A1%9C-ep-press-play-%ED%9E%8C%ED%8A%B8%EB%93%A4">보그 코리아, 2026.09.01</a></cite>
+          </p>
+        </section>
 
         <details class="gap" data-gap="up mid low">
           <summary><span class="g-label">비운 자리 — K-POP <b>최상류 · 상류 · 중류</b> <span class="g-count">· 여기까지 온 후보 5</span></span></summary>
@@ -1152,9 +1243,10 @@
           <div>
             <h4>오늘 한 줄 요약 — K-POP</h4>
             <p class="oneline">
-              오늘도 K-POP은 비었습니다. 발표로 채워지는 달이 아니라 현장으로 채워지는 달인
-              것 같아요. 모레 인천 오디션, 다음 주 문학 스타디움, 그다음 주 잠실 로봇 무대까지
-              판정 날짜가 줄줄이 잡혀 있습니다.
+              오늘 K-POP은 트렌드 대신 컴백으로 채웠습니다. 목록을 늘어놓고 보니 이번 주는
+              그룹이 아니라 개인 이름이 대부분이에요. 발표로 채워지는 달이 아니라 현장으로
+              채워지는 달인 것 같기도 합니다. 모레 인천 오디션, 다음 주 문학 스타디움,
+              그다음 주 잠실 로봇 무대까지 판정 날짜가 줄줄이 잡혀 있고요.
             </p>
           </div>
           <div>
@@ -1173,7 +1265,11 @@
         올렸고, 서로 독립적인 신호가 2개 이상 확인된 것만 골랐습니다. 그래서 <b>오늘은
         2개</b>이고, <b>종합 상류와 K-POP 세 단계를 비웠습니다</b> — 어디까지 왔던 후보인지는
         접힌 블록에 준최상류·준상류·준중류·관찰 중 등급과 탈락 사유, 승격 조건으로 정리해
-        뒀습니다. K-POP 카테고리를 통째로 비운 건 8월 26일·30일, 9월 2일에 이어 네 번째입니다.
+        뒀습니다. K-POP 카테고리에 단계 기준을 통과한 트렌드가 없는 건 8월 26일·30일,
+        9월 2일에 이어 네 번째인데, <b>이번 회차부터는 그 자리를 비워 두지 않고 가장 가까운
+        컴백 소식으로 채웁니다.</b> 단계 판정 기준을 낮춘 게 아니라 빈 자리의 처리 방식을
+        바꾼 것이고, 컴백 일정에는 독립 신호 2개 규칙 대신 <b>집계 사이트 두 곳 이상 대조</b>를
+        적용했습니다. 승격 조건을 다음 회차로 넘기는 '비운 자리' 블록은 그대로 뒀습니다.
         틱톡 포맷 항목은 <b>8월 22일·9월 2일 회차에서 관측처 한 곳뿐이라 두 번 보류했던 건</b>으로,
         승격 조건으로 걸어 뒀던 두 번째 관측처가 나폴레옹캣 8월 27일 갱신본에서 확인돼
         본선에 올렸습니다. 트래커 자체가 8월 중순 이후 멈춰 있다가 이번 주에 뉴잉겐(9월 1일)과
@@ -11889,7 +11985,7 @@
             t.hidden = !onStage;
             if (onStage) shown.push(t);
           });
-          [].slice.call(c.querySelectorAll(".gap")).forEach(function (g) {
+          [].slice.call(c.querySelectorAll(".gap, .comeback")).forEach(function (g) {
             var stages = (g.dataset.gap || "").split(/\s+/);
             g.hidden = !(state.stage === "all" || stages.indexOf(state.stage) >= 0);
           });
