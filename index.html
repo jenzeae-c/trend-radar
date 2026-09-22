@@ -9,7 +9,15 @@
 <meta property="og:title" content="오늘의 트렌드 레이더">
 <meta property="og:description" content="최근 2주 안에 관측된 신호만 골라 최상류·상류·중류로 정리하는 트렌드 리포트. 종합 트렌드와 K-POP 두 카테고리로 발행합니다.">
 <meta property="og:locale" content="ko_KR">
-<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://jenzeae-c.github.io/trend-radar/">
+<meta property="og:site_name" content="오늘의 트렌드 레이더">
+<meta property="og:image" content="https://jenzeae-c.github.io/trend-radar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="오늘의 트렌드 레이더 — 최상류 · 상류 · 중류로 나눠 기록하는 매일의 트렌드 리포트">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jenzeae-c.github.io/trend-radar/og-image.png">
+<link rel="canonical" href="https://jenzeae-c.github.io/trend-radar/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128225;</text></svg>">
 </head>
 <body>
@@ -635,13 +643,94 @@
     color: var(--faint);
   }
 
+  /* ─── 날짜 선택(모바일) · 회차 검색 · 소급 표시 · 관찰 후보 보드 ─── */
+
+  .date-pick {
+    display: none;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    padding: 6px 12px;
+    max-width: 100%;
+  }
+  .date-pick:focus { outline: none; border-color: var(--blue); }
+
+  .tab.watch-btn[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
+
+  .arch-search {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 13.5px;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    padding: 8px 11px;
+    margin-bottom: 8px;
+  }
+  .arch-search:focus { outline: none; border-color: var(--blue); }
+  .arch-hit { font-size: 12px; color: var(--faint); margin: 0 0 10px; min-height: 1em; }
+
+  .a-tag {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--faint);
+    border: 1px solid var(--hair);
+    border-radius: 5px;
+    padding: 0 5px;
+    vertical-align: 1px;
+  }
+
+  .watch-lede { padding-bottom: 26px; border-bottom: 1px solid var(--hair); margin-bottom: 26px; }
+  .watch-lede h1 { margin: 6px 0 12px; }
+  .watch-lede p { margin: 0; color: var(--ink-2); line-height: 1.7; }
+  .watch-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .watch-item { border: 1px solid var(--hair); border-radius: 12px; padding: 14px 16px; background: #fff; }
+  .watch-item .near-head { margin-bottom: 6px; }
+  .watch-meta { font-size: 13px; color: var(--muted); margin: 0 0 6px; }
+  .watch-meta b { color: var(--ink); }
+  .watch-dates { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .watch-dates button {
+    appearance: none;
+    font: inherit;
+    font-size: 12.5px;
+    cursor: pointer;
+    color: var(--muted);
+    background: var(--tint);
+    border: 1px solid var(--hair);
+    border-radius: 999px;
+    padding: 2px 10px;
+  }
+  .watch-dates button:hover { color: var(--blue); border-color: var(--blue); }
+  .watch-more { margin-top: 18px; font-size: 13px; color: var(--faint); }
+
   @media (max-width: 900px) {
     body { font-size: 16.5px; }
-    .shell { grid-template-columns: 1fr; row-gap: 34px; }
+    .shell { grid-template-columns: minmax(0, 1fr); row-gap: 34px; }
     .rail { position: static; order: 2; border-top: 1px solid var(--hair); padding-top: 26px; max-height: none; overflow-y: visible; }
     .arch-body { max-height: none; overflow-y: visible; }
-    .main { order: 1; }
+    .main { order: 1; min-width: 0; }
     .trend h3 { max-width: none; }
+    .caveat { white-space: normal; }
+    /* 휴대폰에서는 헤더가 본문을 가리지 않게 같이 스크롤되고, 날짜 선택은 제목 옆에 둔다 */
+    .topbar { position: static; }
+    .bar-row-1 { gap: 10px 8px; }
+    .date-pick { display: inline-block; order: 1; font-size: 13.5px; padding: 5px 10px; }
+    .tabs { order: 2; }
+    .watch-btn { order: 3; }
   }
 
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -655,6 +744,8 @@
         <button class="tab" role="tab" data-cat="general" aria-selected="true">종합 트렌드</button>
         <button class="tab" role="tab" data-cat="kpop" aria-selected="false">K-POP</button>
       </div>
+      <button class="tab watch-btn" type="button" id="watchBtn" aria-pressed="false">관찰 후보</button>
+      <select class="date-pick" id="datePick" aria-label="리포트 날짜 선택"></select>
     </div>
     <div class="bar-row-2">
       <span class="filter-label">단계 필터</span>
@@ -673,6 +764,8 @@
     <details class="arch" open>
       <summary><span class="arch-label">지난 리포트 확인</span><span class="arch-count" id="archCount"></span></summary>
       <div class="arch-body">
+        <input class="arch-search" id="archSearch" type="search" placeholder="지난 리포트 검색 (예: 오르조, 핑클)" aria-label="지난 리포트 검색">
+        <p class="arch-hit" id="archHit"></p>
         <div class="archive" id="archive"></div>
         <div class="rail-note">리포트는 발행될 때마다 날짜별로 이 칸에 쌓입니다.</div>
       </div>
@@ -21529,6 +21622,20 @@
 
     <div class="empty" id="empty" hidden></div>
 
+    <section class="watch" id="watch" hidden>
+      <div class="lede watch-lede">
+        <p class="dateline">관찰 후보 보드</p>
+        <h1>아직 본선에 못 오른 후보들</h1>
+        <p>
+          매 회차 '비운 자리'에 남긴 후보를 한곳에 모았습니다. 최근 2주 안에 다시 언급된 후보만, 가장 최근에 언급된 순서로 보여 줘요.
+          같은 날이면 여러 번 이월된 후보가 위에 옵니다.
+          위의 종합 트렌드 · K-POP 탭으로 카테고리를 바꿀 수 있어요.
+        </p>
+      </div>
+      <ul class="nearlist watch-list" id="watchList"></ul>
+      <p class="watch-more" id="watchMore"></p>
+    </section>
+
   </main>
 </div>
 
@@ -21538,17 +21645,17 @@
     { date: "2026-09-21", label: "9월 21일 리포트", note: "순한 어린 사진에 얹은 사이다 썰, 화면으로 굴리는 염주 앱, 개인은 두고 그룹만 맡는 핑클의 계약" },
     { date: "2026-09-20", label: "9월 20일 리포트", note: "부모를 속이는 AI 조상 사진, 커피 아닌 오르조 라떼, 이름과 계정을 들고 나간 더보이즈, 계약서 단위로 올라온 아이돌 협업" },
     { date: "2026-09-19", label: "9월 19일 리포트", note: "천이 렌즈를 덮는 전환, 이름 넷이 올라간 케이크, 면허 대신 산 미니카, 음악방송 밖으로 나간 컴백 무대" },
-    { date: "2026-09-18", label: "9월 18일 리포트", note: "롯데월드 퍼레이드의 사물 머리 캐릭터 '가로등 신사', 9월 마지막 주 컴백" },
-    { date: "2026-09-17", label: "9월 17일 리포트", note: "올리자마자 보관함에 넣는 고스트 포스팅, 9월 18일에 몰린 컴백" },
-    { date: "2026-09-16", label: "9월 16일 리포트", note: "기준을 넘긴 트렌드 없이 비운 자리 후보만, 9월 셋째 주 컴백 9건" },
+    { date: "2026-09-18", label: "9월 18일 리포트", note: "롯데월드 퍼레이드의 사물 머리 캐릭터 '가로등 신사', 9월 마지막 주 컴백", backfill: true },
+    { date: "2026-09-17", label: "9월 17일 리포트", note: "올리자마자 보관함에 넣는 고스트 포스팅, 9월 18일에 몰린 컴백", backfill: true },
+    { date: "2026-09-16", label: "9월 16일 리포트", note: "기준을 넘긴 트렌드 없이 비운 자리 후보만, 9월 셋째 주 컴백 9건", backfill: true },
     { date: "2026-09-15", label: "9월 15일 리포트", note: "말을 더듬는 졸업 연설 오디오, 티저를 18시간에 몰아 여는 엔카이브, 9월 마지막 주 컴백 8건" },
     { date: "2026-09-14", label: "9월 14일 리포트", note: "아메리칸 걸 돌의 비명, AI로 얼굴만 바꾼 STORM 군무, 밤티 반대말이 된 장원영" },
     { date: "2026-09-13", label: "9월 13일 리포트", note: "치즈버거 한 개 뒤에 숨긴 한 줄, 9월 트래커의 첫 교집합" },
     { date: "2026-09-12", label: "9월 12일 리포트", note: "10대에게 돌아온 종이 잡지와 팀명보다 먼저 연 유튜브" },
     { date: "2026-09-11", label: "9월 11일 리포트", note: "공정률 69%인 공연장이 먼저 연 2027년 대관 창구" },
-    { date: "2026-09-10", label: "9월 10일 리포트", note: "기아와 애플이 아이돌과 낸 정식 음원 두 건" },
-    { date: "2026-09-09", label: "9월 9일 리포트", note: "수화기·엽서·자판기 — 음원 플랫폼이 직접 지은 팬덤 공간" },
-    { date: "2026-09-08", label: "9월 8일 리포트", note: "게임성 아닌 소리로 어른을 끌어온 로블록스" },
+    { date: "2026-09-10", label: "9월 10일 리포트", note: "기아와 애플이 아이돌과 낸 정식 음원 두 건", backfill: true },
+    { date: "2026-09-09", label: "9월 9일 리포트", note: "수화기·엽서·자판기 — 음원 플랫폼이 직접 지은 팬덤 공간", backfill: true },
+    { date: "2026-09-08", label: "9월 8일 리포트", note: "게임성 아닌 소리로 어른을 끌어온 로블록스", backfill: true },
     { date: "2026-09-07", label: "9월 7일 리포트", note: "자막 한 줄에 숨긴 농담 · 말끝에 붙는 '삐' · 90년 된 가게로 들어간 브랜드" },
     { date: "2026-09-06", label: "9월 6일 리포트", note: "덜 산 하루에 금색 별을 붙이는 포맷 · 9월 목록 전체가 기운 쪽" },
     { date: "2026-09-05", label: "9월 5일 리포트", note: "LA 말고 여기를 지킨다는 자막 포맷 · AI 글의 조회수를 40% 깎은 플랫폼들" },
@@ -21579,41 +21686,72 @@
   ];
 
   (function () {
-    var state = { date: REPORTS[0].date, cat: "general", stage: "all" };
+    var byDate = {};
+    REPORTS.forEach(function (r) { byDate[r.date] = r; });
+
+    var state = { date: REPORTS[0].date, cat: "general", stage: "all", view: "report" };
+    var pendingScroll = null;
 
     var archiveBox = document.getElementById("archive");
     var tocBox     = document.getElementById("toc");
     var countEl    = document.getElementById("fcount");
     var emptyEl    = document.getElementById("empty");
+    var watchBox   = document.getElementById("watch");
+    var watchList  = document.getElementById("watchList");
+    var watchMore  = document.getElementById("watchMore");
+    var watchBtn   = document.getElementById("watchBtn");
+    var datePick   = document.getElementById("datePick");
+    var searchEl   = document.getElementById("archSearch");
+    var hitEl      = document.getElementById("archHit");
     var reports    = [].slice.call(document.querySelectorAll(".report"));
-    var tabs       = [].slice.call(document.querySelectorAll(".tab"));
+    var tabs       = [].slice.call(document.querySelectorAll(".tab[data-cat]"));
     var fchips     = [].slice.call(document.querySelectorAll(".fchip"));
 
+    /* ── 아카이브 버튼 + 모바일 날짜 선택 ── */
     REPORTS.forEach(function (r) {
       var b = document.createElement("button");
       b.type = "button";
       b.innerHTML = '<span class="a-date"></span><span class="a-note"></span>';
       b.querySelector(".a-date").textContent = r.label;
+      if (r.backfill) {
+        var tag = document.createElement("span");
+        tag.className = "a-tag";
+        tag.textContent = "소급";
+        tag.title = "발행되지 않았던 날을 그 날짜까지의 자료로 뒤늦게 채운 회차";
+        b.querySelector(".a-date").appendChild(tag);
+      }
       b.querySelector(".a-note").textContent = r.note;
-      b.addEventListener("click", function () { state.date = r.date; render(); });
+      b.addEventListener("click", function () { go({ date: r.date, view: "report" }, true); });
       b.dataset.date = r.date;
       archiveBox.appendChild(b);
+
+      if (datePick) {
+        var o = document.createElement("option");
+        o.value = r.date;
+        o.textContent = r.label + (r.backfill ? " · 소급" : "");
+        datePick.appendChild(o);
+      }
+    });
+    if (datePick) datePick.addEventListener("change", function () {
+      go({ date: datePick.value, view: "report" }, true);
     });
 
     var archCount = document.getElementById("archCount");
     var archBox   = document.querySelector(".arch");
+    var archBody  = document.querySelector(".arch-body");
+
+    // 휴대폰에서는 위쪽 날짜 선택으로 충분하니 아래 아카이브는 접어 둔다.
+    if (archBox && window.matchMedia && window.matchMedia("(max-width: 900px)").matches) archBox.open = false;
 
     function syncArchLabel() {
       if (!archCount) return;
       if (archBox && !archBox.open) {
-        var cur = REPORTS.filter(function (r) { return r.date === state.date; })[0];
+        var cur = byDate[state.date];
         archCount.textContent = cur ? cur.label.replace(" 리포트", "") : "";
       } else {
         archCount.textContent = REPORTS.length + "개";
       }
     }
-    var archBody = document.querySelector(".arch-body");
-
     function syncArchFade() {
       if (!archBody) return;
       var more = archBody.scrollHeight - archBody.clientHeight - archBody.scrollTop > 2;
@@ -21621,36 +21759,198 @@
     }
     if (archBody) archBody.addEventListener("scroll", syncArchFade);
     window.addEventListener("resize", syncArchFade);
+    if (archBox) archBox.addEventListener("toggle", function () { syncArchLabel(); syncArchFade(); });
 
-    if (archBox) archBox.addEventListener("toggle", function () {
-      syncArchLabel();
-      syncArchFade();
+    /* ── 지난 리포트 검색 ── */
+    var searchText = {};
+    reports.forEach(function (r) {
+      var parts = [];
+      [].slice.call(r.querySelectorAll("h1, .trend h3, .near-head b, .cb-row b, .cb-title")).forEach(function (el) {
+        parts.push(el.textContent);
+      });
+      var meta = byDate[r.dataset.date];
+      if (meta) parts.push(meta.note);
+      searchText[r.dataset.date] = parts.join(" ").toLowerCase().replace(/\s+/g, " ");
     });
-    syncArchFade();
+    function runSearch() {
+      var q = (searchEl.value || "").trim().toLowerCase();
+      var hits = 0;
+      [].slice.call(archiveBox.children).forEach(function (b) {
+        var ok = !q || (searchText[b.dataset.date] || "").indexOf(q) >= 0;
+        b.hidden = !ok;
+        if (ok) hits++;
+      });
+      hitEl.textContent = q ? (hits ? hits + "개 회차에서 찾았어요" : "찾는 말이 들어간 회차가 없어요") : "";
+      syncArchFade();
+    }
+    if (searchEl) searchEl.addEventListener("input", runSearch);
+
+    /* ── 관찰 후보 보드: 각 회차의 '비운 자리' 후보를 모은다 ── */
+    function norm(t) {
+      return (t || "").replace(/, 그 후$/, "").replace(/[\s'"‘’“”「」()·.,…!?~\-]/g, "").toLowerCase();
+    }
+    var trendTitles = {};
+    reports.forEach(function (r) {
+      [].slice.call(r.querySelectorAll(".trend")).forEach(function (t) {
+        var k = norm(t.dataset.title);
+        if (!trendTitles[k] || trendTitles[k] < r.dataset.date) trendTitles[k] = r.dataset.date;
+      });
+    });
+    var watch = {};
+    reports.forEach(function (r) {
+      var date = r.dataset.date;
+      [].slice.call(r.querySelectorAll(".nearlist li")).forEach(function (li) {
+        var nameEl = li.querySelector(".near-head b");
+        if (!nameEl) return;
+        var cat = li.closest(".cat");
+        var name = nameEl.textContent.trim();
+        var key = (cat ? cat.dataset.cat : "general") + "|" + norm(name);
+        var rank = li.querySelector(".near-rank");
+        var tagEl = li.querySelector(".near-tag");
+        var cond = li.querySelector(".near-if");
+        var w = watch[key] || (watch[key] = { cat: cat ? cat.dataset.cat : "general", key: norm(name), seen: [] });
+        w.seen.push({
+          date: date, name: name,
+          rank: rank ? rank.textContent.trim() : "", soft: rank ? rank.classList.contains("soft") : false,
+          tag: tagEl ? tagEl.textContent.trim() : "",
+          cond: cond ? cond.textContent.replace(/^\s*승격 조건\s*—\s*/, "").trim() : ""
+        });
+      });
+    });
+    var watchItems = Object.keys(watch).map(function (k) {
+      var w = watch[k];
+      w.seen.sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+      w.last = w.seen[0];
+      w.first = w.seen[w.seen.length - 1].date;
+      w.promoted = trendTitles[w.key] && trendTitles[w.key] >= w.first ? trendTitles[w.key] : null;
+      return w;
+    });
+    function daysBetween(a, b) { return Math.round((new Date(a) - new Date(b)) / 86400000); }
+    function shortDate(d) { return (+d.slice(5, 7)) + "/" + (+d.slice(8, 10)); }
+
+    function renderWatch() {
+      var latest = REPORTS[0].date;
+      var list = watchItems.filter(function (w) { return w.cat === state.cat; });
+      var recent = list.filter(function (w) { return daysBetween(latest, w.last.date) <= 14; });
+      recent.sort(function (a, b) {
+        if (a.last.date !== b.last.date) return a.last.date < b.last.date ? 1 : -1;
+        return b.seen.length - a.seen.length;
+      });
+      watchList.innerHTML = "";
+      recent.forEach(function (w) {
+        var li = document.createElement("li");
+        li.className = "watch-item";
+        var head = document.createElement("div");
+        head.className = "near-head";
+        var rk = document.createElement("span");
+        rk.className = "near-rank" + (w.last.soft ? " soft" : "");
+        rk.textContent = w.promoted ? "본선 진입" : w.last.rank;
+        var tg = document.createElement("span");
+        tg.className = "near-tag";
+        tg.textContent = w.last.tag;
+        var nm = document.createElement("b");
+        nm.textContent = w.last.name;
+        head.appendChild(rk); if (w.last.tag) head.appendChild(tg); head.appendChild(nm);
+        li.appendChild(head);
+
+        var meta = document.createElement("p");
+        meta.className = "watch-meta";
+        meta.innerHTML = "<b>" + w.seen.length + "회</b> 언급 · 처음 " + shortDate(w.first) +
+          " · 마지막 " + shortDate(w.last.date) +
+          (w.promoted ? " · <b>" + shortDate(w.promoted) + " 본선</b>" : "");
+        li.appendChild(meta);
+
+        if (w.last.cond) {
+          var c = document.createElement("p");
+          c.className = "near-if";
+          c.innerHTML = "<b>승격 조건</b> — ";
+          c.appendChild(document.createTextNode(w.last.cond));
+          li.appendChild(c);
+        }
+        var ds = document.createElement("div");
+        ds.className = "watch-dates";
+        w.seen.forEach(function (s) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.textContent = shortDate(s.date) + " 회차";
+          b.addEventListener("click", function () { go({ date: s.date, view: "report" }, true); });
+          ds.appendChild(b);
+        });
+        li.appendChild(ds);
+        watchList.appendChild(li);
+      });
+      var older = list.length - recent.length;
+      watchMore.textContent = recent.length === 0 ? "최근 2주 안에 언급된 후보가 없습니다." :
+        (older > 0 ? "2주 넘게 다시 언급되지 않은 후보 " + older + "개는 목록에서 뺐어요. 지난 리포트 검색으로 찾아볼 수 있습니다." : "");
+    }
+
+    /* ── 회차별 주소: #2026-09-21, #2026-09-21/kpop, #watch, #트렌드id ── */
+    function readHash() {
+      var h = "";
+      try { h = decodeURIComponent(location.hash.slice(1)); } catch (e) { h = location.hash.slice(1); }
+      if (!h) return;
+      if (h === "watch") { state.view = "watch"; return; }
+      var m = h.match(/^(\d{4}-\d{2}-\d{2})(?:\/(general|kpop))?$/);
+      if (m && byDate[m[1]]) {
+        state.view = "report"; state.date = m[1];
+        if (m[2]) state.cat = m[2];
+        return;
+      }
+      var el = document.getElementById(h);
+      var r = el && el.closest ? el.closest(".report") : null;
+      if (r) {
+        state.view = "report"; state.date = r.dataset.date;
+        var c = el.closest(".cat");
+        if (c) state.cat = c.dataset.cat;
+        state.stage = "all";
+        pendingScroll = el;
+      }
+    }
+    function writeHash(active) {
+      if (!window.history || !history.replaceState) return;
+      var cur = location.hash.slice(1);
+      var el = cur && document.getElementById(cur);
+      if (state.view === "report" && el && active && active.contains(el)) return;  // 트렌드 링크는 그대로 둔다
+      var want = state.view === "watch" ? "#watch" : "#" + state.date + (state.cat === "kpop" ? "/kpop" : "");
+      if (location.hash !== want) history.replaceState(null, "", want);
+    }
+
+    function go(patch, toTop) {
+      for (var k in patch) state[k] = patch[k];
+      render();
+      if (toTop) window.scrollTo(0, 0);
+    }
 
     tabs.forEach(function (t) {
-      t.addEventListener("click", function () { state.cat = t.dataset.cat; render(); });
+      t.addEventListener("click", function () { go({ cat: t.dataset.cat }); });
     });
-
     fchips.forEach(function (c) {
-      c.addEventListener("click", function () { state.stage = c.dataset.stage; render(); });
+      c.addEventListener("click", function () { go({ stage: c.dataset.stage, view: "report" }); });
     });
+    if (watchBtn) watchBtn.addEventListener("click", function () {
+      go({ view: state.view === "watch" ? "report" : "watch" }, true);
+    });
+    window.addEventListener("hashchange", function () { readHash(); render(); });
 
     function render() {
+      var isWatch = state.view === "watch";
       [].slice.call(archiveBox.children).forEach(function (b) {
-        b.setAttribute("aria-current", b.dataset.date === state.date ? "true" : "false");
+        b.setAttribute("aria-current", !isWatch && b.dataset.date === state.date ? "true" : "false");
       });
+      if (datePick) datePick.value = state.date;
       syncArchLabel();
       tabs.forEach(function (t) {
         t.setAttribute("aria-selected", t.dataset.cat === state.cat ? "true" : "false");
       });
       fchips.forEach(function (c) {
-        c.setAttribute("aria-pressed", c.dataset.stage === state.stage ? "true" : "false");
+        c.setAttribute("aria-pressed", !isWatch && c.dataset.stage === state.stage ? "true" : "false");
       });
+      if (watchBtn) watchBtn.setAttribute("aria-pressed", isWatch ? "true" : "false");
+      watchBox.hidden = !isWatch;
 
       var active = null;
       reports.forEach(function (r) {
-        var on = r.dataset.date === state.date;
+        var on = !isWatch && r.dataset.date === state.date;
         r.hidden = !on;
         if (on) active = r;
       });
@@ -21679,7 +21979,10 @@
       var method = active ? active.querySelector(".method") : null;
       if (method) method.hidden = !hasCat || state.stage !== "all";
 
-      if (!hasCat) {
+      if (isWatch) {
+        emptyEl.hidden = true;
+        renderWatch();
+      } else if (!hasCat) {
         emptyEl.hidden = false;
         emptyEl.textContent = "이 날짜의 리포트에는 " +
           (state.cat === "kpop" ? "K-POP" : "종합 트렌드") +
@@ -21691,7 +21994,7 @@
         emptyEl.hidden = true;
       }
 
-      countEl.textContent = shown.length > 0 ? shown.length + "개 표시 중" : "";
+      countEl.textContent = !isWatch && shown.length > 0 ? shown.length + "개 표시 중" : "";
 
       tocBox.innerHTML = "";
       shown.forEach(function (t, i) {
@@ -21709,8 +22012,18 @@
         li.appendChild(a);
         tocBox.appendChild(li);
       });
+
+      writeHash(active);
+      syncArchFade();
+
+      if (pendingScroll) {
+        var target = pendingScroll;
+        pendingScroll = null;
+        setTimeout(function () { target.scrollIntoView({ block: "start" }); }, 0);
+      }
     }
 
+    readHash();
     render();
   })();
 </script>
