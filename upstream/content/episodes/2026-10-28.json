@@ -1,0 +1,306 @@
+{
+  "date": "2026-10-28",
+  "issue": 33,
+  "title": "피드의 주인에서 운영의 동료로",
+  "summary": "친구 사진을 보는 작은 앱에서 이용자가 운영비와 기능 결정까지 나누고 있습니다. Posting2의 최근 확산을 공식 서비스 설명과 독립 이용자 취재로 대조해 종합 최상류 한 자리를 골랐습니다. 국내 체험의 개장 예고와 팬덤의 실제 사용을 구분하면서 나머지 다섯 자리는 관찰 목록으로 남겼습니다.",
+  "period": "2026-10-15 ~ 2026-10-28",
+  "categories": {
+    "general": {
+      "name": "종합 트렌드",
+      "description": "소비 · 콘텐츠 · 마케팅 — 오늘은 1개",
+      "axis": "지리적 유입: 해외의 초기 신호 → 국내 유입 → 여러 국내 주체의 채택",
+      "trends": [
+        {
+          "id": "posting2-community-funded-feed",
+          "stage": "headwater",
+          "title": "광고 없는 피드의 작은 운영진",
+          "definition": "Posting2는 친구와 친구의 친구가 올린 사진을 보는 소셜 앱입니다. 광고 대신 이용자의 선택적 후원과 굿즈 판매로 운영하고, 앱 안에서 기능 변경에 관한 투표를 받습니다.",
+          "sections": [
+            {
+              "heading": "단계 — 왜 최상류인가",
+              "body": "종합의 지리적 유입 축에서 해외 초기 신호로 골랐습니다. [공식 앱 설명](https://apps.apple.com/us/app/posting2/id6762965370)에서 후원·투표 방식을 직접 확인했고, [2026년 10월 22일 Fast Company 취재](https://www.fastcompany.com/91627543/posting2-app-big-hit-gen-z-throwback-to-old-instagram)에서는 미국 이용자의 게시 습관과 최근 주변 확산이 별도로 확인됩니다. 국내 이용 확산을 뒷받침할 근거는 확보하지 못했습니다. 앱 출시는 2026년 6월로 오래됐지만, 이번 선정 근거는 10월에 새로 확인한 이용자 증가와 경험입니다."
+            },
+            {
+              "heading": "시작 신호가 보이는 곳",
+              "body": "정확한 최초 발원지는 확인하기 어렵지만 현재 확인되는 초기 확산 지점은 미국의 예술·스케이트·대학생 커뮤니티입니다. [Fast Company](https://www.fastcompany.com/91627543/posting2-app-big-hit-gen-z-throwback-to-old-instagram)가 만난 이용자는 친구 약 36명과 연결돼 주 3회 정도 사진을 올린다고 설명했습니다. 공식 계정이 변경안을 묻는 모습도 기사에 등장합니다. 팬 수를 늘리는 계정 운영보다 작은 공간의 규칙을 함께 고르는 장면이 눈에 들어옵니다."
+            },
+            {
+              "heading": "왜 지금 한국에서 주목해야 하는지",
+              "body": "[10월 22일 기사](https://www.fastcompany.com/91627543/posting2-app-big-hit-gen-z-throwback-to-old-instagram)에 제시된 고유 이용자는 10월 21일 기준 36,671명입니다. 회사가 제공한 내부 수치이며 활성 이용자나 후원자 수는 아닙니다. 같은 취재에는 모르는 사람의 요청이 늘어 친밀감이 달라졌다는 목소리도 있습니다. [공식 앱 설명](https://apps.apple.com/us/app/posting2/id6762965370)의 선택적 후원 구조를 함께 보면, 한국의 소규모 취향 커뮤니티에도 ‘커질수록 좋은가, 오래 유지되는 편이 좋은가’라는 운영 질문을 던져볼 만합니다. 국내 유입과 유료 후원의 지속성은 추가 관찰 필요입니다."
+            },
+            {
+              "heading": "확산 경로",
+              "body": "해외 소규모 사진 커뮤니티 → 친구를 통한 가입과 최근 이용자 증가 → 기능 투표·선택적 후원으로 운영에 참여 → 국내 취향 모임의 공동 운영 실험(예상). 마지막은 확인된 국내 확산이 아니라 적용 가설입니다."
+            },
+            {
+              "heading": "활용 아이디어 2개",
+              "ideas": [
+                "브랜드·마케터: 사진·책 취향 모임의 4주 게시판을 열고, 다음 주 주제와 공개 범위를 참여자가 투표하게 합니다. 광고 게시물 대신 운영비 사용 내역과 선택적 후원 항목을 공개하고, 가입 수보다 재게시율·투표 참여율·후원 없이 남는 비율을 함께 기록합니다. Posting2 내부 광고 집행을 제안하는 기획은 아닙니다.",
+                "매거진·SNS: ‘내 피드의 규칙을 정할 수 있다면’ 카드뉴스 5장을 제작합니다. 사진 공유 범위, 기능 투표, 선택적 후원, 낯선 사람의 유입, 독자가 고를 운영 규칙 순서로 구성합니다. 마지막 장에서 ‘친구의 친구까지 공개’와 ‘초대한 사람만 공개’를 투표로 묻고, 다음 게시물에서 선택 이유를 소개합니다."
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "date": "2026-10-28",
+              "kind": "공식 앱 설명 직접 확인",
+              "label": "Posting2 App Store — 후원·기능 투표 안내",
+              "url": "https://apps.apple.com/us/app/posting2/id6762965370",
+              "group": "posting2-official",
+              "confirms": "친구·친구의 친구 사진, 광고 없는 운영, 기능 투표, 선택적 후원·굿즈 판매 구조. 날짜는 이번 열람일입니다.",
+              "limits": "10월 28일에 기능이 출시됐다는 뜻이 아닙니다. 실제 후원액·투표 참여율·국내 이용 규모는 확인하지 못했습니다."
+            },
+            {
+              "date": "2026-10-22",
+              "kind": "독립 이용자 취재",
+              "label": "Fast Company — 이용자 인터뷰와 10월 21일 규모",
+              "url": "https://www.fastcompany.com/91627543/posting2-app-big-hit-gen-z-throwback-to-old-instagram",
+              "group": "fastcompany-interview",
+              "confirms": "이용자의 게시 습관·주변 확산·낯선 사람 유입 경험을 독립 취재. 회사 제공 고유 이용자 수 36,671명도 별도 표기.",
+              "limits": "규모 수치는 독립 감사가 아닌 회사 내부 자료입니다. 소수 인터뷰를 전체 이용자 성향으로 일반화하지 않았습니다."
+            }
+          ]
+        }
+      ],
+      "vacancies": [
+        {
+          "stage": "upstream",
+          "reason": "국내 도입 계획과 실제 이용 확산을 구분했습니다. 해외 후보를 한국 상류로 올릴 국내 사용 근거도 부족합니다. 추가 관찰 필요입니다.",
+          "candidates": [
+            {
+              "name": "스낵이 제미나이 캠퍼스",
+              "grade": "준상류",
+              "reason": "2026-10-30 개장 전 · D-2 · 공식 발표 1계열",
+              "condition": "개장 후 학생증·전공 미션을 실제 수행한 독립 방문 기록을 공식 설계와 대조할 수 있으면 검토합니다.",
+              "source": "https://blog.google/intl/ko-kr/company-news/inside-google/gemini-seongsu-meetup-oct-kr/"
+            },
+            {
+              "name": "OWV × moove XR 사진",
+              "grade": "관찰 중",
+              "reason": "2026-10-19 시작 · 국내 진입 0건 확인 · 후기 원문 미확인",
+              "condition": "해외 이용 후기의 날짜·촬영 결과를 직접 확인하면 최상류 후보로, 국내 운영과 사용 기록까지 확인하면 상류로 검토합니다.",
+              "source": "https://www.furyu.jp/news/2026/10/moove_owv/"
+            },
+            {
+              "name": "샤오홍슈 점점의 구매 추천",
+              "grade": "관찰 중",
+              "reason": "2026-10-19 실측 기사 1계열 · 국내 채택 미확인",
+              "condition": "독립적인 두 번째 검색 기록을 확보하면 최상류로, 국내 서비스의 같은 구매 경로 도입이 확인되면 상류로 검토합니다.",
+              "source": "https://caifuhao.eastmoney.com/news/20261019094308690380160"
+            }
+          ]
+        },
+        {
+          "stage": "midstream",
+          "reason": "가상 피팅 기고문의 작성자는 서비스 제공사 대표였습니다. 별도 매체에 실렸다는 이유로 독립 검증에 더하지 않았으며, 개별 팝업 하나를 여러 브랜드의 공통 흐름으로 확대하지 않았습니다.",
+          "candidates": [
+            {
+              "name": "빔스튜디오의 AI 룩북 체험",
+              "grade": "준중류",
+              "reason": "2026-10-19 기고 · 제공사 대표 작성 1계열",
+              "condition": "별개 운영자의 같은 방식 도입과 고객이 만든 룩북의 독립 사용 기록을 확인하면 검토합니다.",
+              "source": "https://www.fi.co.kr/main/view.asp?idx=89018"
+            },
+            {
+              "name": "넾페스타의 멤버십 오프라인 경험",
+              "grade": "준중류",
+              "reason": "2026-10-30 개장 전 · D-2",
+              "condition": "얼굴 인증 입장·결제·스탬프의 현장 연결과 다른 운영자의 유사 도입을 확인하면 검토합니다.",
+              "source": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034633"
+            },
+            {
+              "name": "월드콘 40주년의 토핑 체험",
+              "grade": "관찰 중",
+              "reason": "2026-10-23 발표 · 공동 체험 흐름 확인 1건",
+              "condition": "다른 식품 브랜드에서도 아카이브 관람이 개인화 제품 선택에 연결되는 새 장치가 독립 현장 기록으로 확인되면 검토합니다.",
+              "source": "https://web3.newspim.com/news/view/20261023000160"
+            }
+          ]
+        }
+      ],
+      "oneLine": "작은 피드에서 발견한 변화는 무엇을 올리느냐보다 누가 운영 규칙과 유지 비용을 나누느냐에 있습니다.",
+      "next": [
+        "OWV × moove XR 사진: 검색에 잡힌 이용 후기를 원문 날짜·촬영 결과까지 확인하면 재검토합니다.",
+        "스낵이 제미나이 캠퍼스: 2026-10-30 개장 뒤 전공 미션의 실제 수행 장면을 확인합니다.",
+        "샤오홍슈 점점의 구매 추천: 다른 작성자의 직접 검색·구매 이동 기록을 확보합니다."
+      ]
+    },
+    "kpop": {
+      "name": "K-POP",
+      "description": "아티스트 · 팬덤 · 공연 — 오늘은 0개 · 컴백 소식으로 대신합니다",
+      "axis": "파이프라인: 기획 → 데뷔·출시 전 → 코어 팬덤 → 팬덤 밖",
+      "trends": [],
+      "vacancies": [
+        {
+          "stage": "headwater",
+          "reason": "새 발매·출연진 공개와 제작 방식의 변화는 구분했습니다. 해외 커뮤니티의 음원 검증 규칙은 두 번째 독립 신호가 부족합니다. 추가 관찰 필요입니다.",
+          "candidates": [
+            {
+              "name": "아일릿 해외 팬 커뮤니티의 가짜 음원 FAQ",
+              "grade": "준최상류",
+              "reason": "2026-10-19 공지 · 독립 커뮤니티 1곳",
+              "condition": "다른 팬 커뮤니티에서도 공식 확인을 거치는 음원 검증 규칙이 새로 운영되면 재검토합니다.",
+              "source": "https://www.reddit.com/r/illit/comments/1x9mkxq/faq_for_the_break_even_era/"
+            },
+            {
+              "name": "MAMA 세대 통합 라인업",
+              "grade": "관찰 중",
+              "reason": "2026-10-16 출연진 발표 · 정규 프로모션",
+              "condition": "관객의 선택이 실제 무대 구성에 반영되는 신규 규칙을 공식 자료와 별도 근거에서 확인하면 검토합니다.",
+              "source": "https://www.tenasia.co.kr/article/2026101655614"
+            },
+            {
+              "name": "AM8IC의 선공개 싱글 일정",
+              "grade": "관찰 중",
+              "reason": "2026-10-29 발매 전 · D-1 · 정규 프로모션",
+              "condition": "일정 공개 외 팬의 제작·유통 참여 방식이 공식 실물과 독립 자료로 확인되면 검토합니다.",
+              "source": "https://kstationtv.com/2026/09/30/am8ic-the-mystical-quintet-ready-to-set-everything-ablaze-with-the-shock-calendar-for-rascals-find-the-pearl/?lang=en"
+            }
+          ]
+        },
+        {
+          "stage": "upstream",
+          "reason": "새 서비스 공개와 팬이 실제로 쓰는 장면 사이에 아직 확인할 부분이 남았습니다. 안내문·행사 소개를 사용 후기처럼 세지 않았습니다. 추가 관찰 필요입니다.",
+          "candidates": [
+            {
+              "name": "지니 팬트리의 스트림파티",
+              "grade": "준상류",
+              "reason": "2026-10-14 출시 · 14일 경과 · 기간 내 새 사용 근거 미확보",
+              "condition": "2026-10-15 이후 팬이 새로 개설한 감상방과 점수 누적 경험을 기록한 원문이 확인되면 검토합니다.",
+              "source": "https://www.newsis.com/view/NISX20261014_0003825415"
+            },
+            {
+              "name": "아이브 DIVE ACADEMY의 히어로 미션",
+              "grade": "준상류",
+              "reason": "2026-10-19 공연 · 독립 미션 수행 기록 0건 확보",
+              "condition": "방문자가 선택·수행한 미션과 결과를 공식 설계와 대조할 수 있는 기록이 확인되면 검토합니다.",
+              "source": "https://otakukart.com/ive-debuts-looks-can-kill-live-at-spotify-dive-academy-ahead-of-october-26-ep-release/"
+            },
+            {
+              "name": "쁘넥도 팝업의 음성 QR 경험",
+              "grade": "준상류",
+              "reason": "2026-10-21 개장 · 독립 음성 QR 사용 기록 0건 확보",
+              "condition": "팬이 현장에서 QR을 열고 청취한 과정을 공식 안내와 대조할 수 있으면 검토합니다.",
+              "source": "https://www.timespread.co.kr/community/boynextdoor/136984488"
+            }
+          ]
+        },
+        {
+          "stage": "midstream",
+          "reason": "극장 협업과 캡슐 코드 판매는 확인됩니다. 다만 상품 출고 예정일을 이용 완료로 바꾸거나, 행사 판매자의 홍보 기사를 별도 이용자 취재로 더하지 않았습니다. 새로운 소비 방식으로 판정하려면 추가 관찰 필요입니다.",
+          "candidates": [
+            {
+              "name": "HYBE CINE FEST의 디지털 코드 부스",
+              "grade": "준중류",
+              "reason": "2026-10-26 출고 예정 공지 · 독립 코드 사용 기록 0건 확보",
+              "condition": "극장 방문자가 캡슐의 코드를 수령하고 콘텐츠를 이용한 직접 기록을 확인하면 재검토합니다.",
+              "source": "https://hybecinefest.com/special-locations/"
+            },
+            {
+              "name": "Hearts2Hearts의 게임 기념곡 협업",
+              "grade": "준중류",
+              "reason": "2026-10-23 무대 사진 · 인게임 음성 사용 미확인",
+              "condition": "멤버 음성 등 게임 내 콘텐츠 적용과 이용자 참여 기록이 함께 확인되면 검토합니다.",
+              "source": "https://kpopping.com/kpics/261023-ian-at-rov-arena-of-the-decade-in-thailand"
+            },
+            {
+              "name": "아이브 컴백과 DDP 도시마케팅",
+              "grade": "준중류",
+              "reason": "2026-10-21 서울시 발표 · 독립 신호 1계열",
+              "condition": "영상 노출을 넘어 팬의 장소 간 이동·참여를 바꾸는 운영 장치와 독립 이용 기록이 확인되면 검토합니다.",
+              "source": "https://nwww.newsis.com/view/NISX20261021_0003834762"
+            }
+          ]
+        }
+      ],
+      "comebacks": {
+        "stages": [
+          "headwater",
+          "upstream",
+          "midstream"
+        ],
+        "period": "2026-10-29 ~ 2026-11-07 · 발행일 다음 날부터 열흘",
+        "note": "아래 6건은 두 일정표를 대조한 확정 일정입니다. 앨범명 대신 타이틀곡명을 적은 항목은 개별 기사로 구분했습니다. 전체 발매 목록은 아니며, 세부 명칭·발매 유형 대조를 끝내지 못한 일정은 제외했습니다. 모두 컴백·발매 안내이며 트렌드 수에 포함하지 않습니다.",
+        "sources": [
+          {
+            "label": "KPOP OFFICIAL · 10월",
+            "url": "https://kpopofficial.com/kpop-comeback-schedule-october-2026/"
+          },
+          {
+            "label": "KPOP OFFICIAL · 11월",
+            "url": "https://kpopofficial.com/kpop-comeback-schedule-november-2026/"
+          },
+          {
+            "label": "Kprofiles · 11월 및 10월 말 예고",
+            "url": "https://kprofiles.com/november-2026-kpop-comebacks-debuts-releases/"
+          },
+          {
+            "label": "TWS 앨범·타이틀 대조",
+            "url": "https://ktrenz.com/article/2026/10/tws-single-album-to-us-november-2-nae-ireum-bulleojwo"
+          },
+          {
+            "label": "xikers 앨범·타이틀 대조",
+            "url": "https://e.usen.com/news/news-release/xikers-112xikers.html"
+          },
+          {
+            "label": "RESCENE 앨범·일자 대조",
+            "url": "https://news.sbs.co.kr/english/article.do?news_id=N1008765575%2F"
+          }
+        ],
+        "items": [
+          {
+            "artist": "JISOO",
+            "album": "ADDICTED",
+            "date": "2026-10-30",
+            "type": "컴백 · 디지털 싱글"
+          },
+          {
+            "artist": "TWS",
+            "album": "TO US",
+            "date": "2026-11-02",
+            "type": "컴백 · 싱글앨범"
+          },
+          {
+            "artist": "TREASURE",
+            "album": "SHOCK",
+            "date": "2026-11-02",
+            "type": "컴백 · 디지털 싱글"
+          },
+          {
+            "artist": "xikers",
+            "album": "ROUTE ZERO : The CALLING",
+            "date": "2026-11-02",
+            "type": "컴백 · 미니앨범"
+          },
+          {
+            "artist": "RESCENE",
+            "album": "PULSE",
+            "date": "2026-11-03",
+            "type": "컴백 · 미니앨범"
+          },
+          {
+            "artist": "P1Harmony",
+            "album": "BLOW UP",
+            "date": "2026-11-06",
+            "type": "컴백 · 미니앨범"
+          }
+        ]
+      },
+      "oneLine": "체험을 예고하는 안내는 늘었지만, 팬이 새 장치를 어떻게 쓰는지까지 확인한 신호는 이번 본선에 남지 않았습니다.",
+      "next": [
+        "HYBE CINE FEST: 2026-10-26 출고 예정 이후 코드 수령·재생을 확인할 독립 기록을 찾습니다.",
+        "쁘넥도 팝업: 2026-11-03 종료 전 음성 QR의 실제 청취 기록을 확인합니다.",
+        "츠키 × 서든어택: 2026-10-29 적용 뒤 기존 연예인 캐릭터 판매와 다른 참여 장치가 있는지 확인합니다."
+      ]
+    }
+  },
+  "method": [
+    "한국시간 2026-10-15~2026-10-28, 오늘 포함 최근 14일의 새 움직임을 확인했습니다. 이전 32개 회차의 선정 주제와 관찰 후보를 대조했습니다. 2026-10-01 기준 3일 간격이며 다음 예정일은 2026-10-31입니다.",
+    "선정은 종합 최상류 1개입니다. Posting2의 공식 앱 설명과 별도 이용자 취재를 서로 다른 신호로 보았습니다. 최근성은 앱 열람일이 아니라 10월 21일 규모 자료와 10월 22일 취재에 담긴 최근 확산에 근거합니다. 회사 제공 수치를 독립 검증 통계로 쓰지 않았습니다.",
+    "종합 상류는 실제 국내 이용 근거 부족, 중류는 여러 국내 주체의 같은 새 방식 채택 근거 부족으로 비웠습니다. K-POP 최상류는 산업 루틴 또는 독립 신호 부족, 상류는 최근 팬 사용 근거 부족, 중류는 팬덤 밖 새 이용 방식의 독립 근거 부족입니다. 빈 단계마다 3개씩 총 15개 후보를 남겼습니다.",
+    "한국어 공식 캠페인·현장 자료, 영어권 신생 소셜 서비스·팬 커뮤니티, 중국어 샤오홍슈 점점·도우인 소비 자료, 일본어 XR 사진·팬 소비·음악 발표를 새로 검색했습니다. 중국어 구매 추천 기사의 전재는 한 계열로 셌습니다. 비그룸피의 10월 26일 기사는 실제 행사일이 10월 1~7일이어서 새 움직임으로 쓰지 않았습니다.",
+    "Posting2 공식 홈페이지는 웹 도구에서 열리지 않아 공식 App Store 설명을 직접 확인했습니다. OWV 이용 후기는 Yahoo 검색 결과에서 포착했지만 X 원문 날짜·실물을 대조하지 못해 독립 신호로 채택하지 않았습니다. 샤오홍슈·도우인 앱 내부와 로그인 뒤 TikTok·Instagram·X 게시물, 비공개 팬카페는 직접 열람하지 못했습니다. 확보하지 못했다는 표현은 해당 기록이 없다는 단정이 아닙니다.",
+    "K-POP 일정 범위는 2026-10-29~2026-11-07입니다. KPOP OFFICIAL과 Kprofiles를 대조하고 TWS·xikers·RESCENE는 개별 기사로 앨범명을 확인했습니다. 6건의 일정은 빈 세 단계 필터 모두에서 보이게 유지합니다. 정규 발매 예고를 최상류 트렌드로 승격하지 않았습니다.",
+    "지난 선정 주제는 단계 이동 근거 없이 반복하지 않았습니다. 보류 후보의 동일 이름과 판정 가능한 조건을 유지했습니다. 활용 아이디어와 경로의 마지막 단계는 관측 사실과 구분한 기획 가설입니다."
+  ]
+}
