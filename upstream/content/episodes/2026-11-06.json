@@ -1,0 +1,258 @@
+{
+  "date": "2026-11-06",
+  "issue": 36,
+  "title": "대화창 밖으로 향하는 다음 실험",
+  "summary": "일본 라이브 플랫폼의 AI 분신 연동과 영어권 영상통화형 스토리 앱이 눈에 들어왔습니다. 국내에서는 AI 체험 팝업의 방문 후기를 찾았지만, 새 방식을 뒷받침할 독립 자료까지 충분히 확보하지 못했습니다. 이번에는 본선 선정을 쉬고, 확인해야 할 조건을 남긴 후보와 확정 발매 일정을 전합니다.",
+  "period": "2026-10-24 ~ 2026-11-06",
+  "categories": {
+    "general": {
+      "name": "종합 트렌드",
+      "description": "소비 · 콘텐츠 · 마케팅 — 오늘은 0개 · 후보를 더 관찰합니다",
+      "axis": "지리적 유입: 해외의 초기 신호 → 국내 유입 → 여러 국내 주체의 채택",
+      "trends": [],
+      "vacancies": [
+        {
+          "stage": "headwater",
+          "reason": "새 서비스의 공개는 확인했지만, 같은 발표를 옮긴 보도와 별개 이용을 구별했습니다. 해외의 기능 출시만으로 한국에 들어올 흐름을 확정하지 않았습니다. 추가 관찰 필요입니다.",
+          "candidates": [
+            {
+              "name": "Pococha와 OSHIAI의 승인형 AI 분신",
+              "grade": "준최상류",
+              "reason": "2026-11-04 공식 연동 · 독립 신호 1계열",
+              "condition": "연동한 방송자의 공개 AI와 팬이 이를 사용한 별개 기록이 함께 확인되면 검토합니다.",
+              "source": "https://dena.com/jp/news/5468/"
+            },
+            {
+              "name": "Prelulu의 영상통화형 이야기",
+              "grade": "준최상류",
+              "reason": "2026-11-05 출시 발표 · 독립 영상통화 검증 0건 확보",
+              "condition": "사용자가 같은 캐릭터와 텍스트에서 영상통화로 옮겨 이야기를 이어간 기록을 확인하면 검토합니다.",
+              "source": "https://prelulu.ai/"
+            },
+            {
+              "name": "샤오홍슈 小红卡의 재구매 혜택",
+              "grade": "준최상류",
+              "reason": "2026-11-05 모집 보도 · 가맹점 적용 원문 0건 확보",
+              "condition": "실제 가맹점의 가입 안내와 첫 구매·재구매 혜택 적용 기록을 대조할 수 있으면 검토합니다.",
+              "source": "https://www.100ec.cn/detail--6665478.html"
+            }
+          ]
+        },
+        {
+          "stage": "upstream",
+          "reason": "제미나이 캠퍼스의 11월 2일 방문 후기는 검색에서 발견했지만 후기 본문을 직접 대조하지 못했습니다. 행사 예정표와 검색 일부 문장을 합쳐 새로운 국내 이용 행동이 검증됐다고 쓰지 않았습니다.",
+          "candidates": [
+            {
+              "name": "스낵이 제미나이 캠퍼스",
+              "grade": "준상류",
+              "reason": "2026-11-02 후기 검색 확인 · 원문 본문 대조 미완료",
+              "condition": "교양 수업이나 전공 미션을 경험한 방문 후기 원문을 공식 프로그램과 대조할 수 있으면 검토합니다.",
+              "source": "https://popga.co.kr/"
+            },
+            {
+              "name": "Teaz의 웹툰 AI 캐릭터 행사 체험",
+              "grade": "준상류",
+              "reason": "2026-10-29 행사 예고 검색 확인 · 11-20 개막 전 D-14",
+              "condition": "공식 행사 원문과 별개 방문자의 웹툰 캐릭터 대화 체험을 함께 확인하면 검토합니다.",
+              "source": "https://teapawt.net/wefestaofficial"
+            },
+            {
+              "name": "샤오홍슈 점점의 구매 추천",
+              "grade": "관찰 중",
+              "reason": "2026-10-19 사용기 · 18일 경과 · 국내 이용 미확인",
+              "condition": "최근 14일 안에 한국 사용자의 추천 화면과 실제 상품 선택 과정을 확인하면 검토합니다.",
+              "source": "https://caifuhao.eastmoney.com/news/20261019094308690380160"
+            }
+          ]
+        },
+        {
+          "stage": "midstream",
+          "reason": "행사장 방문을 개인화된 상품 선택이나 다음 행동으로 연결하는 방식을 추적했습니다. 국내 여러 브랜드가 같은 새 방식을 채택했다는 근거는 아직 부족합니다.",
+          "candidates": [
+            {
+              "name": "NFC 굿즈의 현장 체크인 연결",
+              "grade": "관찰 중",
+              "reason": "2026-11-06 제공사 자료 재검토 · 도입일 확인 0건",
+              "condition": "최근 14일 안에 서로 다른 브랜드의 도입일과 실제 NFC 사용을 확인하면 검토합니다.",
+              "source": "https://www.vvfystudio.com/en"
+            },
+            {
+              "name": "월드콘 40주년의 토핑 체험",
+              "grade": "관찰 중",
+              "reason": "2026-10-23 발표 · 14일 경과 · 기간 내 새 확산 미확인",
+              "condition": "다른 식품 브랜드가 아카이브 관람과 개인화 제품 선택을 연결한 새 체험을 공개하면 검토합니다.",
+              "source": "https://web3.newspim.com/news/view/20261023000160"
+            },
+            {
+              "name": "S70의 주거 공간 사전 체험",
+              "grade": "관찰 중",
+              "reason": "2026-11-03 현장 기사 · 운영 주체 1곳 · 수주 홍보",
+              "condition": "서로 다른 브랜드에서 계약 홍보를 넘어 일반 방문자의 생활 실험을 받는 운영 방식이 확인되면 검토합니다.",
+              "source": "https://www.newspim.com/news/view/20261102001540"
+            }
+          ]
+        }
+      ],
+      "oneLine": "AI가 대화창 밖으로 나오는 장면은 늘지만, 이번 자료에서는 발표 이후의 이용을 확인하는 일이 남았습니다.",
+      "next": [
+        "Pococha는 방송자의 연동 동의가 실제 팬 대화로 이어졌는지 봅니다.",
+        "Prelulu는 영상통화가 소개 화면을 넘어 이야기 진행에 쓰인 기록을 찾습니다.",
+        "제미나이 캠퍼스는 검색에 잡힌 방문 후기의 본문과 수업 경험을 대조합니다."
+      ]
+    },
+    "kpop": {
+      "name": "K-POP",
+      "description": "아티스트 · 팬덤 · 공연 — 오늘은 0개 · 컴백 소식으로 대신합니다",
+      "axis": "파이프라인: 기획 → 데뷔·출시 전 → 코어 팬덤 → 팬덤 밖",
+      "trends": [],
+      "vacancies": [
+        {
+          "stage": "headwater",
+          "reason": "솔로 데뷔와 팬 캐릭터 팝업은 일정만으로 최상류에 올리지 않았습니다. 해외 소규모 팝업도 운영자의 예고 한 건을 넘어선 행동을 확인해야 합니다.",
+          "candidates": [
+            {
+              "name": "채령 Lovesick 솔로 데뷔 예고",
+              "grade": "관찰 중",
+              "reason": "2026-11-09 발매 전 · D-3 · 정규 프로모션",
+              "condition": "발매 일정과 별개인 새 제작·팬 참여 방식이 공식 실물과 별도 근거로 확인되면 검토합니다.",
+              "source": "https://world.kbs.co.kr/service/contents_view.htm?board_seq=472542&lang=e"
+            },
+            {
+              "name": "핌즈클럽의 HOLIDAY EXPRESS",
+              "grade": "관찰 중",
+              "reason": "2026-11-05 팝업 소식 · 11-09 개장 전 D-3",
+              "condition": "캐릭터 상품 판매 외에 팬의 참여가 결과물을 바꾸는 운영 규칙과 별개 근거가 확인되면 검토합니다.",
+              "source": "https://www.timespread.co.kr/community/lesserafim/137817871"
+            },
+            {
+              "name": "NXTBIAS의 K-POP 클럽 팝업",
+              "grade": "준최상류",
+              "reason": "2026-11-07 행사 전 · D-1 · 운영자 안내 1계열",
+              "condition": "참가자가 남긴 기록에서 기존 굿즈 모임과 다른 교환·참여 규칙이 확인되면 검토합니다.",
+              "source": "https://nxtbias.com/es/pages/kpop-club-popup-rsvp"
+            }
+          ]
+        },
+        {
+          "stage": "upstream",
+          "reason": "심야 세션과 게임 속 보상은 실행 방식이 흥미롭지만, 운영 안내와 별개 팬의 사용 기록을 함께 확보하지 못했습니다. 같은 원문을 받아쓴 기사를 두 번째 신호로 더하지 않았습니다.",
+          "candidates": [
+            {
+              "name": "RIIZE into INSOMNIA의 심야 세션",
+              "grade": "준상류",
+              "reason": "2026-10-30 종료 보도 · 별도 심야 세션 참여 원문 0건 확보",
+              "condition": "팬이 심야 세션의 구체적인 참여 프로그램을 수행한 원문을 운영 안내와 대조할 수 있으면 검토합니다.",
+              "source": "https://www.starnewskorea.com/music/2026/10/30/2026103014212473237"
+            },
+            {
+              "name": "인더섬 with BTS의 미션과 실물 경품",
+              "grade": "준상류",
+              "reason": "2026-11-03 업데이트 보도 · 독립 참여 기록 0건 확보",
+              "condition": "게임 미션 달성이 실물 경품 응모로 이어지는 과정을 이용자가 직접 기록하면 검토합니다.",
+              "source": "https://down.gameshot.net/common/con_view.php?code=GA6ae93e80a10cb"
+            },
+            {
+              "name": "쁘넥도 팝업의 음성 QR 경험",
+              "grade": "준상류",
+              "reason": "2026-10-21 개장 · 16일 경과 · 기간 내 음성 QR 사용 미확인",
+              "condition": "팬이 현장에서 QR을 열고 청취한 과정을 공식 안내와 대조할 수 있으면 검토합니다.",
+              "source": "https://www.timespread.co.kr/community/boynextdoor/136984488"
+            }
+          ]
+        },
+        {
+          "stage": "midstream",
+          "reason": "비엔터 업종의 이름이 붙었다는 사실만으로 새 소비 방식이 되지는 않습니다. 디지털 코드의 실제 사용과 후원사가 도입한 참여 장치를 구분해 더 살펴봅니다.",
+          "candidates": [
+            {
+              "name": "HYBE CINE FEST의 디지털 코드 부스",
+              "grade": "준중류",
+              "reason": "2026-10-26 출고 예정 공지 · 독립 코드 사용 기록 0건 확보",
+              "condition": "극장 방문자가 캡슐의 코드를 수령하고 콘텐츠를 이용한 직접 기록을 확인하면 재검토합니다.",
+              "source": "https://shop.weverse.io/en/shop/USD/artists/112/notices/14679"
+            },
+            {
+              "name": "Hearts2Hearts의 게임 기념곡 협업",
+              "grade": "준중류",
+              "reason": "2026-10-23 무대 사진 · 14일 경과 · 기간 내 새 도입 미확인",
+              "condition": "멤버 음성 등 게임 내 콘텐츠 적용과 이용자 참여 기록이 함께 확인되면 검토합니다.",
+              "source": "https://kpopping.com/kpics/261023-ian-at-rov-arena-of-the-decade-in-thailand"
+            },
+            {
+              "name": "다날의 NOVA 시상식 후원",
+              "grade": "관찰 중",
+              "reason": "2026-11-04 후원 보도 · 소비자 참여 장치 미확인",
+              "condition": "결제·멤버십을 통해 관객이 사용하는 새 기능과 독립 이용 기록이 확인되면 검토합니다.",
+              "source": "https://search.newspim.com/news/view/20261104000452"
+            }
+          ]
+        }
+      ],
+      "oneLine": "이번에 확인한 발매와 후원 소식만으로 팬의 참여 방식까지 달라졌다고 보기는 어렵습니다.",
+      "next": [
+        "라이즈 심야 세션은 구체적인 참가 과정이 담긴 팬 원문을 찾습니다.",
+        "인더섬은 게임 미션과 실물 보상 사이에 팬이 실제로 거치는 단계를 봅니다.",
+        "씨네 페스트는 디지털 코드의 수령 뒤 사용 기록을 추적합니다."
+      ],
+      "comebacks": {
+        "stages": [
+          "headwater",
+          "upstream",
+          "midstream"
+        ],
+        "period": "2026-11-07 ~ 2026-11-16",
+        "note": "확정된 발매 가운데 두 곳 이상에서 날짜와 이름을 대조한 일정을 실었습니다. 컴백 소식은 트렌드 선정 개수에 포함하지 않습니다. NCT DREAM은 개별 발표에서도 11월 9일을 확인했습니다.",
+        "sources": [
+          {
+            "label": "KPOP OFFICIAL · 11월 일정",
+            "url": "https://kpopofficial.com/kpop-comeback-schedule-november-2026/"
+          },
+          {
+            "label": "KBS WORLD · 11월 4일 발매 안내",
+            "url": "https://world.kbs.co.kr/service/contents_view.htm?board_seq=472542&lang=e"
+          },
+          {
+            "label": "KpopComebacks · 발매 달력",
+            "url": "https://www.kpopcomebacks.com/"
+          },
+          {
+            "label": "ATEEZ · 공식 트랙리스트",
+            "url": "https://ateez.bstage.in/contents/6ad2006cdccb0e48bf81dea4"
+          }
+        ],
+        "items": [
+          {
+            "artist": "CHAERYEONG (ITZY)",
+            "album": "Lovesick",
+            "date": "2026-11-09",
+            "type": "솔로 데뷔 · 미니앨범"
+          },
+          {
+            "artist": "NCT DREAM",
+            "album": "DREAM AFTER DREAM",
+            "date": "2026-11-09",
+            "type": "컴백 · 정규앨범"
+          },
+          {
+            "artist": "LNGSHOT",
+            "album": "S.W.I.S.H.",
+            "date": "2026-11-10",
+            "type": "컴백 · EP"
+          },
+          {
+            "artist": "ATEEZ",
+            "album": "GOLDEN HOUR : Part.6",
+            "date": "2026-11-13",
+            "type": "컴백 · 미니앨범"
+          }
+        ]
+      }
+    }
+  },
+  "method": [
+    "한국시간 2026년 10월 24일~11월 6일의 새 움직임을 검색하고, 앞선 35개 회차의 선정작과 비운 자리 후보를 대조했습니다. 3일 간격 발행을 유지하며 다음 회차는 11월 9일입니다.",
+    "이번 본선 선정은 0개입니다. 종합 최상류는 해외 출시의 독립 사용 근거가 부족했고, 상류는 국내 체험 후기 원문 대조가 미완료였습니다. 중류는 최근 국내 여러 사업자가 같은 새 방식을 채택한 근거가 모자랐습니다. 기간 밖 자료는 관찰 이력으로만 남겼습니다.",
+    "K-POP 최상류는 반복되는 발매·팝업 예고를 제외했습니다. 상류는 공식 운영 안내와 별개 참여 기록, 중류는 비엔터 업종과 연결된 새로운 이용의 근거가 부족했습니다. 세 단계 모두 비우고 11월 7~16일 확정 발매 중 교차 확인한 일정으로 대신했습니다.",
+    "한국어 현장 기사·팬 커뮤니티, 영어권 AI 서비스·음악 일정, 일본어 Pococha·OSHIAI 공식 발표, 중국어 샤오홍슈의 小红卡 모집 보도를 새로 검색했습니다. 샤오홍슈·더우인 등 접근 가능한 원문과 검색 결과의 확인 범위를 구분했고, 검색에 잡힌 일부 문장만으로 독립 검증이 끝났다고 판단하지 않았습니다. 확보하지 못한 이용 기록이 실제로 없다는 뜻은 아닙니다. 모든 보류 후보는 추가 관찰 필요입니다."
+  ]
+}
